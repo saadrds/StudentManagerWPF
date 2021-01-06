@@ -8,4 +8,4 @@ git branch branchName // create new Branch
 
 git checkout branchName // switch to branch branchName
 
-git commit -m "comments" // saving/commiting new changes
+git commit -m "comments" // saving/commiting new changes on branch
