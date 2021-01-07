@@ -6,6 +6,10 @@ git branch // show branches
 
 git branch branchName // create new Branch
 
+git branch -d branchName //delete branch	
+
 git checkout branchName // switch to branch branchName
+
+git addd ficher.txt // add file to stage be commited after
 
 git commit -m "comments" // saving/commiting new changes on branch
