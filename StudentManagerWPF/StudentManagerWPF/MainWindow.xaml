@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="558,216,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="-1.824,-1.023" Height="22"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="441,151,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="-1.824,-1.023" Height="22" Click="Button_Click"/>
+        <TextBox x:Name="id_filiere" HorizontalAlignment="Left" Height="23" Margin="170,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True"/>
+        <TextBox x:Name="nom_filiere" HorizontalAlignment="Left" Height="24" Margin="170,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="respo" HorizontalAlignment="Left" Height="23" Margin="170,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Id :" HorizontalAlignment="Left" Margin="75,108,0,0" VerticalAlignment="Top"/>
+        <Label Content="nom :" HorizontalAlignment="Left" Margin="75,157,0,0" VerticalAlignment="Top"/>
+        <Label Content="Responsable :" HorizontalAlignment="Left" Margin="55,198,0,0" VerticalAlignment="Top" Width="88"/>
 
     </Grid>
 </Window>
