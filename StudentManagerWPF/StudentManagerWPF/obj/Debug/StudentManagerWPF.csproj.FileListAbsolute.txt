@@ -1,0 +1,15 @@
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\StudentManagerWPF.exe.config
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\StudentManagerWPF.exe
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\StudentManagerWPF.pdb
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csprojAssemblyReference.cache
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MainWindow.g.cs
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\App.g.cs
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF_MarkupCompile.cache
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF_MarkupCompile.lref
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MainWindow.baml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.g.resources
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.Properties.Resources.resources
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.GenerateResource.cache
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.CoreCompileInputs.cache
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.exe
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.pdb
