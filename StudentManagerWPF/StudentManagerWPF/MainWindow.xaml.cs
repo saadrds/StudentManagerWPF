@@ -21,29 +21,16 @@ namespace StudentManagerWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        string connString;
-        SqlConnection con;
+        
         public MainWindow()
         {
             InitializeComponent();
-            string SaadServer = "DESKTOP-SL2AUNJ";
-            connString = "Data Source =" + SaadServer +"; Initial Catalog = Gestion_Etudiant; Integrated Security = true;";
-            con = new SqlConnection();
-            con.ConnectionString = connString;
-            con.Open();
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlCommand commande = new SqlCommand("Select * From Filiere", con);
-            SqlDataReader reader = commande.ExecuteReader();
-            while (reader.Read())
-            {
-                id_filiere.Text = reader[0].ToString();
-                nom_filiere.Text = reader.GetString(1);
-                respo.Text = reader.GetString(2);
-
-            }
+            
         }
     }
 }
