@@ -17,6 +17,15 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="7*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Ellipse Fill="Red" Grid.Row="0" Height="15" Width="15" HorizontalAlignment="Right" MouseLeftButtonDown="CloseClick" VerticalAlignment="Top" Margin="0,10,10,0"/>
+            <Ellipse Fill="Green" Grid.Row="0" Height="15" Width="15" MouseLeftButtonDown="MinimizeClick" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,30,0"/>
+        </Grid>
         <Image Source="Assets/ensa-safi-.png" VerticalAlignment="Top" Margin="-30" Width="600" Height="189" />
         <TextBlock Text="Gestion Des Etudiants" HorizontalAlignment="Center" Foreground="Black" FontSize="24" FontWeight="Bold" Margin="279,133,266,260" />
 

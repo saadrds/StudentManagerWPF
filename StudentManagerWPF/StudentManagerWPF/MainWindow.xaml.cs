@@ -39,5 +39,14 @@ namespace StudentManagerWPF
                 error.Content = "*Username or Password INCORRECT ! ";
             }
         }
+        private void MinimizeClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void CloseClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
