@@ -48,3 +48,5 @@ C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManager
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.CopyComplete
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.exe
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.pdb
+C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.g.cs
+C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.baml
