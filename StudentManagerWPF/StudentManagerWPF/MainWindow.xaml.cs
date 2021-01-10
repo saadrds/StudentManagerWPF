@@ -28,9 +28,16 @@ namespace StudentManagerWPF
            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void login_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (username.Text == "admin" && mdp.Password == "123456" )
+            {
+                error.Content = "*Done";
+            }
+            else
+            {
+                error.Content = "*Username or Password INCORRECT ! ";
+            }
         }
     }
 }
