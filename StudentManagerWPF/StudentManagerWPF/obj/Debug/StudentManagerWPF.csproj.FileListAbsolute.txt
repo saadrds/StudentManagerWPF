@@ -112,3 +112,6 @@ C:\Users\safae\Desktop\StudentManager\StudentManagerWPF\StudentManagerWPF\obj\De
 C:\Users\safae\Desktop\StudentManager\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.dll
 C:\Users\safae\Desktop\StudentManager\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.pdb
 C:\Users\safae\Desktop\StudentManager\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.xml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.pdb
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.xml
