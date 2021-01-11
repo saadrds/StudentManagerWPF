@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:StudentManagerWPF"
         mc:Ignorable="d"
-        Title="MenuWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="MenuWindow" Height="550" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <StackPanel>
         <Grid Height="20" Background="WhiteSmoke">
 
@@ -19,21 +19,21 @@
         </Grid>
         <Grid Height="60">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 0" Background="#cde4e7" >
-                <Button Uid="0" Width="260" Content="GESTION DES ETUDIANTS " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Choix_menu"/>
-                <Button Uid="1" Width="260" Content="GESTION DES FILIERES " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Choix_menu"/>
-                <Button Uid="2" Width="260" Content="STATISTIQUE " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Choix_menu" />
+                <Button Uid="0" Width="326" Content="GESTION DES ETUDIANTS " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Choix_menu"/>
+                <Button Uid="1" Width="326" Content="GESTION DES FILIERES " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Choix_menu"/>
+                <Button Uid="2" Width="326" Content="STATISTIQUE " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Choix_menu" />
             </StackPanel>
-            <Grid x:Name="GridCursor" Width="260" Height="5" Background="#2fb7eb" Margin="10,0,0,-40" HorizontalAlignment="Left"/>
+            <Grid x:Name="GridCursor" Width="326" Height="5" Background="#2fb7eb" Margin="10,0,0,-40" HorizontalAlignment="Left"/>
 
 
         </Grid>
-        <Grid Height="350">
-            <Rectangle  Width="250" Height ="340" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Left" >
+        <Grid Height="470">
+            <Rectangle  Width="240" Height ="340" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Left" >
                 <Rectangle.Effect>
                     <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
                 </Rectangle.Effect>
             </Rectangle>
-            <Grid Width="250" Height ="340" Margin="15 0" HorizontalAlignment="Left">
+            <Grid Width="240" Height ="340" Margin="15 0" HorizontalAlignment="Left">
             <StackPanel >
                     <ComboBox x:Name="ComboBox1"  Width="168"  IsEditable="True" IsReadOnly="True" Margin="15" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Choisissez une filiere" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  SelectionChanged="ComboBox1_SelectionChanged">
                         <ComboBoxItem>Genie informatique</ComboBoxItem>
@@ -59,12 +59,12 @@
                     </Border>
                 </StackPanel>
             </Grid>
-            <Rectangle  Width="510" Height ="340" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Right" >
+            <Rectangle  Width="710" Height ="440" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Right" >
                 <Rectangle.Effect>
                     <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
                 </Rectangle.Effect>
             </Rectangle>
-            <Grid Width="510" Height ="340" Margin="15 0" HorizontalAlignment="Right">
+            <Grid Width="710" Height ="440" Margin="15 0" HorizontalAlignment="Right">
                 <ScrollViewer>
                     
                     <WrapPanel Grid.Row="0" Grid.Column="2" x:Name="cards" Margin="10" />
