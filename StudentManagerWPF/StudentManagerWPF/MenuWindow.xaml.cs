@@ -37,7 +37,7 @@ namespace StudentManagerWPF
         private void Choix_menu(object sender, System.Windows.RoutedEventArgs e)
         {
             int index = int.Parse(((Button)e.Source).Uid);
-            GridCursor.Margin = new Thickness(10 + (326 * index), 0, 0, -40);
+            //GridCursor.Margin = new Thickness(10 + (326 * index), 0, 0, -40);
             switch (index)
             {
                 case 0: // Gestion des etudiants

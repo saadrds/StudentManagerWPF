@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:StudentManagerWPF"
         mc:Ignorable="d"
@@ -17,69 +18,75 @@
             <Image Source="Assets/shut.png"  MouseLeftButtonDown="Close" Margin="2" />
             </StackPanel>
         </Grid>
-        <Grid Height="60">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 0" Background="#cde4e7" >
-                <Button Uid="0" Width="326" Content="GESTION DES ETUDIANTS " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Choix_menu"/>
-                <Button Uid="1" Width="326" Content="GESTION DES FILIERES " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Choix_menu"/>
-                <Button Uid="2" Width="326" Content="STATISTIQUE " Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="Choix_menu" />
-            </StackPanel>
-            <Grid x:Name="GridCursor" Width="326" Height="5" Background="#2fb7eb" Margin="10,0,0,-40" HorizontalAlignment="Left"/>
+        <Grid Height="530">
+            <dragablz:TabablzControl >
+
+                <TabItem Header="GESTION DES ETUDIANTS" >
+                    <Grid Height="470">
+                        <Rectangle  Width="240" Height ="340" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Left" >
+                            <Rectangle.Effect>
+                                <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid Width="240" Height ="340" Margin="15 0" HorizontalAlignment="Left">
+                            <StackPanel >
+                                <ComboBox x:Name="ComboBox1"  Width="168"  IsEditable="True" IsReadOnly="True" Margin="15" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Choisissez une filiere" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  SelectionChanged="ComboBox1_SelectionChanged">
+                                    <ComboBoxItem>Genie informatique</ComboBoxItem>
+                                    <ComboBoxItem>Genie industriel</ComboBoxItem>
+                                    <ComboBoxItem>Genie Réseaux et Telecom</ComboBoxItem>
+                                    <ComboBoxItem>Genie Procédé Ciramique</ComboBoxItem>
+                                </ComboBox>
+                                <Border Margin="0,140,0,0" Height="100" Width="200" CornerRadius="4"  BorderThickness="1" BorderBrush="#2fb7eb" Background="#cde4e7">
+
+                                    <StackPanel>
+                                        <WrapPanel Background="#2fb7eb" Width="200">
+                                            <TextBlock TextAlignment="Center" Margin="18,10,0,10" FontSize="14">Informations sur la filiere</TextBlock>
+                                        </WrapPanel>
+                                        <WrapPanel>
+                                            <Label Padding="10,10,0,10">Nom :</Label>
+                                            <TextBlock Text=" nom_Filiere" Padding="6,10,0,0"/>
+                                        </WrapPanel>
+                                        <WrapPanel>
+                                            <Label Padding="10,0,0,10">Responsable :</Label>
+                                            <TextBlock Text=" nom_Respo" Padding="3,0,0,0"/>
+                                        </WrapPanel>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+                        <Rectangle  Width="710" Height ="440" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Right" >
+                            <Rectangle.Effect>
+                                <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid Width="710" Height ="440" Margin="15 0" HorizontalAlignment="Right">
+                            <ScrollViewer>
+
+                                <WrapPanel Grid.Row="0" Grid.Column="2" x:Name="cards" Margin="10" />
 
 
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+
+                </TabItem>
+                
+                
+                <TabItem Header="GESTION DES FILIERES">
+                    <TextBlock Text="Amazing designs!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </TabItem>
+                
+                
+                <TabItem Header="STATISTIQUE">
+                    <TextBlock Text="Ask for any question!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </TabItem>
+                
+            </dragablz:TabablzControl>
         </Grid>
-        <Grid Height="470">
-            <Rectangle  Width="240" Height ="340" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Left" >
-                <Rectangle.Effect>
-                    <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
-                </Rectangle.Effect>
-            </Rectangle>
-            <Grid Width="240" Height ="340" Margin="15 0" HorizontalAlignment="Left">
-            <StackPanel >
-                    <ComboBox x:Name="ComboBox1"  Width="168"  IsEditable="True" IsReadOnly="True" Margin="15" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Choisissez une filiere" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  SelectionChanged="ComboBox1_SelectionChanged">
-                        <ComboBoxItem>Genie informatique</ComboBoxItem>
-                        <ComboBoxItem>Genie industriel</ComboBoxItem>
-                        <ComboBoxItem>Genie Réseaux et Telecom</ComboBoxItem>
-                        <ComboBoxItem>Genie Procédé Ciramique</ComboBoxItem>
-                    </ComboBox>
-                    <Border Margin="0,140,0,0" Height="100" Width="200" CornerRadius="4"  BorderThickness="1" BorderBrush="#2fb7eb" Background="#cde4e7">
+        
+        
+       
 
-                        <StackPanel>
-                            <WrapPanel Background="#2fb7eb" Width="200">
-                                <TextBlock TextAlignment="Center" Margin="18,10,0,10" FontSize="14">Informations sur la filiere</TextBlock>
-                            </WrapPanel>
-                            <WrapPanel>
-                                <Label Padding="10,10,0,10">Nom :</Label>
-                                <TextBlock Text=" nom_Filiere" Padding="6,10,0,0"/>
-                            </WrapPanel>
-                            <WrapPanel>
-                                <Label Padding="10,0,0,10">Responsable :</Label>
-                                <TextBlock Text=" nom_Respo" Padding="3,0,0,0"/>
-                            </WrapPanel>
-                        </StackPanel>
-                    </Border>
-                </StackPanel>
-            </Grid>
-            <Rectangle  Width="710" Height ="440" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Right" >
-                <Rectangle.Effect>
-                    <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
-                </Rectangle.Effect>
-            </Rectangle>
-            <Grid Width="710" Height ="440" Margin="15 0" HorizontalAlignment="Right">
-                <ScrollViewer>
-                    
-                    <WrapPanel Grid.Row="0" Grid.Column="2" x:Name="cards" Margin="10" />
-                    
-                    
-                </ScrollViewer>
-            </Grid>
-
-
-
-
-
-
-
-
-        </Grid>
+    
     </StackPanel>
 </Window>
