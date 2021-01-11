@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="StudentManagerWPF.MainWindow"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="LoginWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <Rectangle Height="307" VerticalAlignment="Top" >
             <Rectangle.Fill>
@@ -26,30 +26,31 @@
             <Image Source="Assets/shut.png" Grid.Row="0" Height="15" Width="15" HorizontalAlignment="Right" MouseLeftButtonDown="CloseClick" VerticalAlignment="Top" Margin="0,10,10,0"/>
             <Image Source="Assets/mini.png" Grid.Row="0" Height="15" Width="15" MouseLeftButtonDown="MinimizeClick" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,40,0"/>
         </Grid>
+        <Grid HorizontalAlignment="Center" Height="450" >
+            <Image Source="Assets/ensa-safi-.png" VerticalAlignment="Top" Margin="-20" Width="600" Height="189" />
+            <Label Content="Gestion Des Etudiants" HorizontalAlignment="Center" Foreground="Black" FontSize="24" FontWeight="Bold" Width="auto" Height="auto" Margin="159,120,154,281"  />
 
-        <Image Source="Assets/ensa-safi-.png" VerticalAlignment="Top" Margin="-30" Width="600" Height="189" />
-        <TextBlock Text="Gestion Des Etudiants" HorizontalAlignment="Center" Foreground="Black" FontSize="24" FontWeight="Bold" Margin="270,133,260,260"  />
+            <Rectangle  Width="514" Height ="190" RadiusY="12" RadiusX="12" Fill="White" VerticalAlignment="Bottom" Margin="0,70" HorizontalAlignment="Center" >
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="15" RenderingBias="Quality" ShadowDepth="1"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Grid Width="514" Height ="190" VerticalAlignment="Bottom" Margin="0,70" HorizontalAlignment="Center">
 
-        <Rectangle  Width="514" Height ="190" RadiusY="12" RadiusX="12" Fill="White" VerticalAlignment="Bottom" Margin="0,70" >
-            <Rectangle.Effect>
-                <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="15" RenderingBias="Quality" ShadowDepth="1"/>
-            </Rectangle.Effect>
-        </Rectangle>
-        <Grid Width="514" Height ="190" VerticalAlignment="Bottom" Margin="0,70">
-
-            <StackPanel VerticalAlignment="Center" Margin="10,-15,10,15">
-                <Label x:Name="error" HorizontalAlignment="Center"  VerticalAlignment="Top" Foreground="#FFFF0606"/>
-                <TextBox x:Name="username" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}"   Width="458" Margin="0,10" />
-                <PasswordBox x:Name="mdp" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  Width="458"  Margin="0,10"/>
-            </StackPanel>
+                <StackPanel VerticalAlignment="Center" Margin="10,-15,10,15">
+                    <Label x:Name="error" HorizontalAlignment="Center"  VerticalAlignment="Top" Foreground="#FFFF0606"/>
+                    <TextBox x:Name="username" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}"   Width="458" Margin="0,10" />
+                    <PasswordBox x:Name="mdp" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  Width="458"  Margin="0,10"/>
+                </StackPanel>
+            </Grid>
+            <Button x:Name="login" Content="LOGIN"  Click="login_Click"  VerticalAlignment="Bottom" Height="48" Background="#FFCDE4E7" Margin="45" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Width="116">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </Grid>
-        <Button x:Name="login" Content="LOGIN"  Click="login_Click"  VerticalAlignment="Bottom" Height="48" Background="#FFCDE4E7" Margin="45" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Width="116">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="8"/>
-                </Style>
-            </Button.Resources>
-        </Button>
 
 
 
