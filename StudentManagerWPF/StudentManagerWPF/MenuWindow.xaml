@@ -15,13 +15,17 @@
             <Image Source="Assets/back.png" HorizontalAlignment="Left"  MouseLeftButtonDown="Back"/>
             <Label Content="Gestion Des Etudiants" HorizontalAlignment="Center" Margin="0,-1.5" Foreground="#2fb7eb"  />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Image Source="Assets/shut.png"  MouseLeftButtonDown="Close" Margin="2" />
+                <Image Source="Assets/shut.png"  MouseLeftButtonDown="Close" Margin="2" />
             </StackPanel>
         </Grid>
         <Grid Height="530">
-            <dragablz:TabablzControl >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="47*"/>
+                <ColumnDefinition Width="954*"/>
+            </Grid.ColumnDefinitions>
+            <dragablz:TabablzControl SelectionChanged="TabablzControl_SelectionChanged" Grid.ColumnSpan="2" >
 
-                <TabItem Header="GESTION DES ETUDIANTS" >
+                <TabItem Header="GESTION DES ETUDIANTS">
                     <Grid Height="470">
                         <Rectangle  Width="240" Height ="340" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Left" >
                             <Rectangle.Effect>
@@ -36,7 +40,8 @@
                                     <ComboBoxItem>Genie Réseaux et Telecom</ComboBoxItem>
                                     <ComboBoxItem>Genie Procédé Ciramique</ComboBoxItem>
                                 </ComboBox>
-                                <Border Margin="0,140,0,0" Height="100" Width="200" CornerRadius="4"  BorderThickness="1" BorderBrush="#2fb7eb" Background="#cde4e7">
+                                <Button Margin="0,0,5,0" Width="130" Name="Button1ere" Click="Button1ere_Click">1ére Année</Button>
+                                <Border Margin="0,100,0,0" Height="100" Width="200" CornerRadius="4"  BorderThickness="1" BorderBrush="#2fb7eb" Background="#cde4e7">
 
                                     <StackPanel>
                                         <WrapPanel Background="#2fb7eb" Width="200">
@@ -60,7 +65,13 @@
                             </Rectangle.Effect>
                         </Rectangle>
                         <Grid Width="710" Height ="440" Margin="15 0" HorizontalAlignment="Right">
+                            <WrapPanel Margin="200,10,0,0" Width="auto">
+                                
+                                <Button Margin="0,0,5,0" Width="130" Background="#6deaee" Name="Button2eme" Click="Button2eme_Click">2éme Année</Button>
+                                <Button Margin="0,0,5,0" Width="130" Background="#6deaee" Name="Button3eme" Click="Button3eme_Click">3éme Anée</Button>
+                            </WrapPanel>
                             <ScrollViewer>
+
 
                                 <WrapPanel Grid.Row="0" Grid.Column="2" x:Name="cards" Margin="10" />
 
@@ -70,23 +81,23 @@
                     </Grid>
 
                 </TabItem>
-                
-                
+
+
                 <TabItem Header="GESTION DES FILIERES">
                     <TextBlock Text="Amazing designs!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </TabItem>
-                
-                
+
+
                 <TabItem Header="STATISTIQUE">
                     <TextBlock Text="Ask for any question!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </TabItem>
-                
+
             </dragablz:TabablzControl>
         </Grid>
-        
-        
-       
 
-    
+
+
+
+
     </StackPanel>
 </Window>

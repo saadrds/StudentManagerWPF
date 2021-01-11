@@ -19,6 +19,7 @@ namespace StudentManagerWPF
     /// </summary>
     public partial class MenuWindow : Window
     {
+        int valueButton = 1;
         public MenuWindow()
         {
             InitializeComponent();
@@ -53,6 +54,36 @@ namespace StudentManagerWPF
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             cards.Children.Add(new StudentCard("123456", "saad", "Rouddasse"));
+        }
+
+        private void TabablzControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void Button1ere_Click(object sender, RoutedEventArgs e)
+        {
+            valueButton = 1;
+            Button1ere.Background = new SolidColorBrush(Color.FromRgb(33, 150, 243));
+            Button2eme.Background = new SolidColorBrush(Color.FromRgb(109, 234, 238));
+            Button3eme.Background = new SolidColorBrush(Color.FromRgb(109, 234, 238));
+            MessageBox.Show("clicked");
+        }
+
+        private void Button2eme_Click(object sender, RoutedEventArgs e)
+        {
+            valueButton = 2;
+            Button2eme.Background = new SolidColorBrush(Color.FromRgb(33, 150, 243));
+            Button1ere.Background = new SolidColorBrush(Color.FromRgb(109, 234, 238));
+            Button3eme.Background = new SolidColorBrush(Color.FromRgb(109, 234, 238));
+        }
+
+        private void Button3eme_Click(object sender, RoutedEventArgs e)
+        {
+            valueButton = 3;
+            Button3eme.Background = new SolidColorBrush(Color.FromRgb(33, 150, 243));
+            Button2eme.Background = new SolidColorBrush(Color.FromRgb(109, 234, 238));
+            Button1ere.Background = new SolidColorBrush(Color.FromRgb(109, 234, 238));
         }
     }
 }
