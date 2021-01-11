@@ -43,6 +43,12 @@ namespace StudentManagerWPF
                 //respo.Text = reader.GetString(2);
 
             }
+
+        }
+
+        private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cards.Children.Add(new StudentCard("123456", "saad", "Rouddasse"));
         }
     }
 }
