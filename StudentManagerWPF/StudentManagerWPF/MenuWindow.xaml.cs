@@ -67,7 +67,6 @@ namespace StudentManagerWPF
             Button1ere.Background = new SolidColorBrush(Color.FromRgb(33, 150, 243));
             Button2eme.Background = new SolidColorBrush(Color.FromRgb(109, 234, 238));
             Button3eme.Background = new SolidColorBrush(Color.FromRgb(109, 234, 238));
-            MessageBox.Show("clicked");
         }
 
         private void Button2eme_Click(object sender, RoutedEventArgs e)

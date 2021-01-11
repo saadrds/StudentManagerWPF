@@ -40,7 +40,7 @@
                                     <ComboBoxItem>Genie Réseaux et Telecom</ComboBoxItem>
                                     <ComboBoxItem>Genie Procédé Ciramique</ComboBoxItem>
                                 </ComboBox>
-                                <Button Margin="0,0,5,0" Width="130" Name="Button1ere" Click="Button1ere_Click">1ére Année</Button>
+                                
                                 <Border Margin="0,100,0,0" Height="100" Width="200" CornerRadius="4"  BorderThickness="1" BorderBrush="#2fb7eb" Background="#cde4e7">
 
                                     <StackPanel>
@@ -65,17 +65,18 @@
                             </Rectangle.Effect>
                         </Rectangle>
                         <Grid Width="710" Height ="440" Margin="15 0" HorizontalAlignment="Right">
-                            <WrapPanel Margin="200,10,0,0" Width="auto">
-                                
-                                <Button Margin="0,0,5,0" Width="130" Background="#6deaee" Name="Button2eme" Click="Button2eme_Click">2éme Année</Button>
-                                <Button Margin="0,0,5,0" Width="130" Background="#6deaee" Name="Button3eme" Click="Button3eme_Click">3éme Anée</Button>
-                            </WrapPanel>
+                            
                             <ScrollViewer>
-
+                                <StackPanel>
+                                <WrapPanel Margin="200,10,0,0" Width="auto">
+                                    <Button Margin="0,0,5,0" Width="130" Name="Button1ere" Click="Button1ere_Click">1ére Année</Button>
+                                    <Button Margin="0,0,5,0" Width="130" Background="#6deaee" Name="Button2eme" Click="Button2eme_Click">2éme Année</Button>
+                                    <Button Margin="0,0,5,0" Width="130" Background="#6deaee" Name="Button3eme" Click="Button3eme_Click">3éme Anée</Button>
+                                </WrapPanel>
 
                                 <WrapPanel Grid.Row="0" Grid.Column="2" x:Name="cards" Margin="10" />
 
-
+                                </StackPanel>
                             </ScrollViewer>
                         </Grid>
                     </Grid>
