@@ -50,3 +50,25 @@ C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManager
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.pdb
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.g.cs
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.baml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\ControlzEx.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MahApps.Metro.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignColors.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.MahApps.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\ControlzEx.pdb
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\ControlzEx.xml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MahApps.Metro.pdb
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MahApps.Metro.xml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignColors.pdb
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.MahApps.pdb
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\firstWindow.g.cs
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.g.cs
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\App.baml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\firstWindow.baml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.baml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.CopyComplete
