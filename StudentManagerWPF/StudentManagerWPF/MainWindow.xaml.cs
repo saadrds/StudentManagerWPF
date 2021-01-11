@@ -32,7 +32,9 @@ namespace StudentManagerWPF
         {
             if (username.Text == "admin" && mdp.Password == "123456" )
             {
-                error.Content = "*Done";
+                MenuWindow menu = new MenuWindow();
+                menu.Show();
+                this.Close();
             }
             else
             {
