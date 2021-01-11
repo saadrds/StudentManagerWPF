@@ -73,12 +73,31 @@
                 
                 
                 <TabItem Header="GESTION DES FILIERES">
-                    <TextBlock Text="Amazing designs!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Grid>
+                        <Rectangle  Width="965" Height ="420" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" >
+                            <Rectangle.Effect>
+                                <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid Width="965" Height ="420"  Margin="15 0" >
+                            
+                        </Grid>
+                    </Grid>
+
                 </TabItem>
                 
                 
                 <TabItem Header="STATISTIQUE">
-                    <TextBlock Text="Ask for any question!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Grid>
+                        <Rectangle  Width="965" Height ="420" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" >
+                            <Rectangle.Effect>
+                                <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid Width="965" Height ="420"  Margin="15 0" >
+
+                        </Grid>
+                    </Grid>
                 </TabItem>
                 
             </dragablz:TabablzControl>
