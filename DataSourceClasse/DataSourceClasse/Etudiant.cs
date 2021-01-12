@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentManagerWPF
+namespace DataSourceClasse
 {
     public class Etudiant
     {
@@ -17,7 +17,7 @@ namespace StudentManagerWPF
         public string nom_filiere;
         public int annee;
 
-        public Etudiant(string cne, string nom, string prenom, char sex, string date_naissance, string photo, string nom_filiere,int annee)
+        public Etudiant(string cne, string nom, string prenom, char sex, string date_naissance, string photo, string nom_filiere, int annee)
         {
             this.cne = cne;
             this.nom = nom;

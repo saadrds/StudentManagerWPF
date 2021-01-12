@@ -16,51 +16,140 @@ using System.Windows.Shapes;
 
 namespace StudentManagerWPF
 {
-    class StudentCard : WrapPanel
+    class StudentCard : StackPanel
     {
-        //Image img;
+        WrapPanel wPanel;
+        Image img;
+        Button b;
         TextBlock cne = new TextBlock();
         TextBlock nom = new TextBlock();
         TextBlock prenom = new TextBlock();
 
-        public StudentCard(String cne, String nom, String prenom)
+        public StudentCard(String imgSource, String cne, String nom, String prenom)
         {
-            this.Height = 200;
-            this.Width = 100;
-            //this.img = img;
+            this.MouseEnter  += new System.Windows.Input.MouseEventHandler(this.pMouseEnter);
+            this.MouseLeave += new System.Windows.Input.MouseEventHandler(this.pMouseLeave);
+            this.b = new Button();
+            b.Click += new RoutedEventHandler(Onb2Click);
+            this.Height = 180;
+            this.Width = 120;
+            this.img = new Image();
             this.cne.Text = cne;
             this.nom.Text = nom;
             this.prenom.Text = prenom;
 
             //image
-            //img.Height = 50;
-            //img.Width = 30;
+            img.Source = new ImageSourceConverter().ConvertFromString(imgSource) as ImageSource;
 
             //cne
-            this.cne.Width = 50;
+            //this.cne.Width = 80;
+            this.cne.FontSize = 12;
+            TextBlock lcne = new TextBlock();
+            lcne.Text = "cne : ";
+            lcne.FontSize = 12;
+
+
 
             //nom
-            this.nom.Width = 50;
+            //this.nom.Width = 80;
+            this.nom.FontSize = 12;
+            TextBlock lnom = new TextBlock();
+            lnom.Text = "nom : ";
+            lnom.FontSize = 12;
+            
+
+
 
             //prenom
-            this.prenom.Width = 50;
+            //this.prenom.Width = 80;
+            this.prenom.FontSize = 12;
+            TextBlock lprenom = new TextBlock();
+            lprenom.Text = "prenom :";
+            lprenom.FontSize = 12;
 
 
 
             //WrapPanel for image and StackedPanel of informations
-            WrapPanel wPanel = new WrapPanel();
-            wPanel.Height = 100;
-            wPanel.Width = 50;
-            wPanel.Background = Brushes.Red;
+            wPanel = new WrapPanel();
+            wPanel.Children.Add(b);
+            ImageBrush imgBrush = new ImageBrush();
+            imgBrush.ImageSource = this.img.Source;
+            b.Background = imgBrush;
+            b.Height = 90;
+            b.Width = 120;
 
-            StackPanel sPanel = new StackPanel();
 
+            //definitions
+            StackPanel definitions = new StackPanel();
+            definitions.Children.Add(lcne);
+            definitions.Children.Add(lprenom);
+            definitions.Children.Add(lnom);
+
+            //Values
+            StackPanel values = new StackPanel();
+            values.Children.Add(this.cne);
+            values.Children.Add(this.prenom);
+            values.Children.Add(this.nom);
+
+            //adding informations and values to the wrapPanel2
+            Border border = new Border();
+            border.Background = Brushes.Aquamarine;
+            border.BorderThickness = new Thickness(3);
+            border.BorderBrush = Brushes.LightGray;
+            border.Padding = new Thickness(5);
+            border.Height = 85;
+            border.Width = 130;
+            WrapPanel wPanel2 = new WrapPanel();
+            Thickness wPanel2margin = this.Margin;
+            wPanel2margin.Left = 5;
+            this.Margin = wPanel2margin;
+            border.Child = wPanel2;
+            wPanel2.Children.Add(definitions);
+            wPanel2.Children.Add(values);
+            Thickness valuesMargin = values.Margin;
+            valuesMargin.Left= 5;
+            values.Margin = valuesMargin;
+
+            //adding image
             //wPanel.Children.Add(img);
-            sPanel.Children.Add(this.cne);
-            sPanel.Children.Add(this.prenom);
+            
+           
+            
 
             this.Children.Add(wPanel);
-            this.Children.Add(sPanel);
+            this.Children.Add(border);
+            Thickness currentMargin = this.Margin;
+            currentMargin.Left = 30;
+            this.Margin = currentMargin;
+
+
         }
+
+        private void pMouseEnter(object sender, System.EventArgs e)
+        {
+            ImageBrush editIcon = new ImageBrush();
+            editIcon.ImageSource = new ImageSourceConverter().ConvertFromString("../../Assets/edit_icon.png") as ImageSource;
+            editIcon.Opacity = 0.5;
+            b.Background = editIcon;
+            Mouse.OverrideCursor = Cursors.Hand;
+
+        }
+
+        private void pMouseLeave(object sender, System.EventArgs e)
+        {
+            ImageBrush imgBrush = new ImageBrush();
+            imgBrush.ImageSource = this.img.Source;
+            b.Background = imgBrush;
+            Mouse.OverrideCursor = Cursors.Arrow;
+
+        }
+
+        void Onb2Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("rfed!");
+        }
+
+
+
     }
 }

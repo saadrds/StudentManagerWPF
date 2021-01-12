@@ -115,3 +115,4 @@ C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.xml
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\App.baml
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\firstWindow.baml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\DataSourceClasse.dll

@@ -40,6 +40,9 @@
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
+    <Reference Include="DataSourceClasse">
+      <HintPath>..\DataSourceClasse.dll</HintPath>
+    </Reference>
     <Reference Include="Dragablz, Version=0.0.3.223, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dragablz.0.0.3.223\lib\net45\Dragablz.dll</HintPath>
     </Reference>
@@ -95,8 +98,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Etudiant.cs" />
-    <Compile Include="Filiere.cs" />
     <Compile Include="firstWindow.xaml.cs">
       <DependentUpon>firstWindow.xaml</DependentUpon>
     </Compile>
@@ -148,6 +149,15 @@
   <ItemGroup>
     <Resource Include="Assets\mini.png" />
     <Resource Include="Assets\shut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\addStudent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\edit_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
