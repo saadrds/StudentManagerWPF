@@ -66,13 +66,16 @@
                         </Rectangle>
                         <Grid Width="710" Height ="440" Margin="15 0" HorizontalAlignment="Right">
                             
-                            <ScrollViewer>
+                            <ScrollViewer Padding="10,0,0,0">
                                 <StackPanel>
-                                <WrapPanel Margin="200,10,0,0" Width="auto">
-                                    <Button Margin="0,0,5,0" Width="130" Name="Button1ere" Click="Button1ere_Click">1ére Année</Button>
-                                    <Button Margin="0,0,5,0" Width="130" Background="#6deaee" Name="Button2eme" Click="Button2eme_Click">2éme Année</Button>
-                                    <Button Margin="0,0,5,0" Width="130" Background="#6deaee" Name="Button3eme" Click="Button3eme_Click">3éme Anée</Button>
-                                </WrapPanel>
+                                <WrapPanel Margin="50,10,0,30" Width="auto">
+                                        <Button Margin="0,0,5,0" Width="130" Name="Button1ere" Click="Button1ere_Click" Background="#2000ff" >1ére Année</Button>
+                                        <Button Margin="0,0,5,0" Width="130" Background="#72a7da" Name="Button2eme" Click="Button2eme_Click">2éme Année</Button>
+                                        <Button Margin="0,0,5,0" Width="130" Background="#72a7da" Name="Button3eme" Click="Button3eme_Click">3éme Anée</Button>
+                                        <Button Margin="130,0,5,0" Width="60" Height="35" Name="addStudent" Background="{x:Null}" BorderBrush="#FF154F7E">
+                                            <Image Source="/Assets/student.png" Width="30" Height="40"></Image>
+                                        </Button>
+                                    </WrapPanel>
 
                                 <WrapPanel Grid.Row="0" Grid.Column="2" x:Name="cards" Margin="10" />
 
