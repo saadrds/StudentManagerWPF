@@ -13,24 +13,35 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                </ResourceDictionary.MergedDictionaries>
+               
+            </ResourceDictionary.MergedDictionaries>
 
         <!-- tell Dragablz tab control to use the Material Design theme -->
+            
             <Style TargetType="{x:Type dragablz:TabablzControl}" BasedOn="{StaticResource MaterialDesignTabablzControlStyle}">
+                
                 <Setter Property="ItemContainerStyle">
                     <Setter.Value>
                         <Style TargetType="dragablz:DragablzItem" BasedOn="{StaticResource MaterialDesignDragableTabItemStyle}">
                             <Setter Property="Height" Value="60" />
                             <Setter Property="Width" Value="333.1" />
-                            <Setter Property="Background" Value="#cde4e7"/>
-                            <Setter Property="Foreground" Value="black"/>
-                           
+                          <!--  <Setter Property="Background" Value="#cde4e7"/>
+                            <Setter Property="Foreground" Value="black"/> -->
                             
+
                         </Style>
                     </Setter.Value>
                 </Setter>
+                
             </Style>
+            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="Red"/>
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="{StaticResource Accent200Foreground}"/>
+            
+            
         </ResourceDictionary>
-    
+        
+
+     
+
     </Application.Resources>
 </Application>

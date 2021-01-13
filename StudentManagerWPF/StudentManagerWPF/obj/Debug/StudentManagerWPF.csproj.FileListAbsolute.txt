@@ -115,3 +115,45 @@ C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.xml
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\App.baml
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\firstWindow.baml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csprojAssemblyReference.cache
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\EditWindow.g.cs
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\firstWindow.g.cs
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\MainWindow.g.cs
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.g.cs
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\App.g.cs
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF_MarkupCompile.cache
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF_MarkupCompile.lref
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.exe
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.pdb
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\StudentManagerWPF.exe.config
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\StudentManagerWPF.exe
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\StudentManagerWPF.pdb
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\ControlzEx.dll
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.dll
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MahApps.Metro.dll
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignColors.dll
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.MahApps.dll
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\ControlzEx.pdb
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\ControlzEx.xml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.pdb
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\Dragablz.xml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MahApps.Metro.pdb
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MahApps.Metro.xml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignColors.pdb
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.MahApps.pdb
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\App.baml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\firstWindow.baml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\MainWindow.baml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.baml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\EditWindow.baml
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.g.resources
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.Properties.Resources.resources
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.GenerateResource.cache
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.CoreCompileInputs.cache
+C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.CopyComplete

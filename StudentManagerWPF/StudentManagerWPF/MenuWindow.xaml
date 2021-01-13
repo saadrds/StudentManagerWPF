@@ -23,7 +23,9 @@
                 <ColumnDefinition Width="47*"/>
                 <ColumnDefinition Width="954*"/>
             </Grid.ColumnDefinitions>
-            <dragablz:TabablzControl SelectionChanged="TabablzControl_SelectionChanged" Grid.ColumnSpan="2" >
+            
+            <dragablz:TabablzControl  Grid.ColumnSpan="2"  >
+                
 
                 <TabItem Header="GESTION DES ETUDIANTS">
                     <Grid Height="470">
@@ -34,7 +36,7 @@
                         </Rectangle>
                         <Grid Width="240" Height ="340" Margin="15 0" HorizontalAlignment="Left">
                             <StackPanel >
-                                <ComboBox x:Name="ComboBox1"  Width="168"  IsEditable="True" IsReadOnly="True" Margin="15" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Choisissez une filiere" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  SelectionChanged="ComboBox1_SelectionChanged">
+                                <ComboBox x:Name="ComboBox1"  Width="168"  IsEditable="True" IsReadOnly="True" Margin="15" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Choisissez une filiere" Style="{StaticResource MaterialDesignFloatingHintComboBox}"  >
                                     <ComboBoxItem>Genie informatique</ComboBoxItem>
                                     <ComboBoxItem>Genie industriel</ComboBoxItem>
                                     <ComboBoxItem>Genie Réseaux et Telecom</ComboBoxItem>
@@ -65,22 +67,9 @@
                             </Rectangle.Effect>
                         </Rectangle>
                         <Grid Width="710" Height ="440" Margin="15 0" HorizontalAlignment="Right">
-                            
-                            <ScrollViewer Padding="10,0,0,0">
-                                <StackPanel>
-                                <WrapPanel Margin="50,10,0,30" Width="auto">
-                                        <Button Margin="0,0,5,0" Width="130" Name="Button1ere" Click="Button1ere_Click" Background="#2000ff" >1ére Année</Button>
-                                        <Button Margin="0,0,5,0" Width="130" Background="#72a7da" Name="Button2eme" Click="Button2eme_Click">2éme Année</Button>
-                                        <Button Margin="0,0,5,0" Width="130" Background="#72a7da" Name="Button3eme" Click="Button3eme_Click">3éme Anée</Button>
-                                        <Button Margin="130,0,5,0" Width="60" Height="35" Name="addStudent" Background="{x:Null}" BorderBrush="#FF154F7E">
-                                            <Image Source="/Assets/student.png" Width="30" Height="40"></Image>
-                                        </Button>
-                                    </WrapPanel>
 
-                                <WrapPanel Grid.Row="0" Grid.Column="2" x:Name="cards" Margin="10" />
+                            <Button Margin="20" VerticalAlignment="Bottom" Width="130" Name="ButtonEdit" Click="ButtonEdit_Click" Foreground="Black" Background="#2fb7eb" > Modifier </Button>
 
-                                </StackPanel>
-                            </ScrollViewer>
                         </Grid>
                     </Grid>
 
