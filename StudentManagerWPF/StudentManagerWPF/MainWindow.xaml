@@ -40,14 +40,18 @@
                 </Rectangle.Effect>
             </Rectangle>
             <Grid Width="514" Height ="190" VerticalAlignment="Bottom" Margin="0,70" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="275*"/>
+                    <ColumnDefinition Width="239*"/>
+                </Grid.ColumnDefinitions>
 
-                <StackPanel VerticalAlignment="Center" Margin="10,-15,10,15">
+                <StackPanel VerticalAlignment="Center" Margin="10,16,10,46" Grid.ColumnSpan="2">
                     <Label x:Name="error" HorizontalAlignment="Center"  VerticalAlignment="Top" Foreground="#FFFF0606"/>
                     <TextBox x:Name="username" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}"   Width="458" Margin="0,10" />
                     <PasswordBox x:Name="mdp" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  Width="458"  Margin="0,10"/>
                 </StackPanel>
             </Grid>
-            <Button x:Name="login" Content="LOGIN"  Click="login_Click"  VerticalAlignment="Bottom" Height="48" Background="#FFCDE4E7" Margin="45" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Width="116">
+            <Button x:Name="login" Content="LOGIN"  Click="login_Click"  VerticalAlignment="Bottom" Height="48" Background="#FFCDE4E7" Margin="45" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Width="116" Foreground="Black">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
