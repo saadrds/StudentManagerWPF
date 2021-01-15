@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,7 @@ namespace StudentManagerWPF
             {
                 //id_filiere.Text = reader[0].ToString();
                 //nom_filiere.Text = reader.GetString(1);
-                //respo.Text = reader.GetString(2);
+                //.Text = reader.GetString(2);
 
             }
 

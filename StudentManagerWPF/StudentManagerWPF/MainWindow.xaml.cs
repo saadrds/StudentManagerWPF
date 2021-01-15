@@ -32,8 +32,13 @@ namespace StudentManagerWPF
         {
             if (username.Text == "admin" && mdp.Password == "123456" )
             {
+<<<<<<< HEAD
                 firstWindow fw = new firstWindow();
                 fw.Show();
+=======
+                MenuWindow menu = new MenuWindow();
+                menu.Show();
+>>>>>>> main
                 this.Close();
             }
             else
@@ -50,5 +55,25 @@ namespace StudentManagerWPF
         {
             Close();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return) {
+                if (username.Text == "admin" && mdp.Password == "123456")
+                {
+                    MenuWindow menu = new MenuWindow();
+                    menu.Show();
+                    this.Close();
+                }
+                else
+                {
+                    error.Content = "*Username or Password INCORRECT ! ";
+                }
+            }
+
+            
+        }
+
+        
     }
 }
