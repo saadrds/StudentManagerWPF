@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.IO;
 namespace StudentManagerWPF
 {
     /// <summary>
@@ -25,7 +25,9 @@ namespace StudentManagerWPF
         public MainWindow()
         {
             InitializeComponent();
-           
+            
+
+
         }
 
         private void login_Click(object sender, RoutedEventArgs e)

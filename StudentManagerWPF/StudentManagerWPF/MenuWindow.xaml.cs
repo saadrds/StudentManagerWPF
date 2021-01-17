@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,13 +25,16 @@ namespace StudentManagerWPF
         int filiere;
         string connString;
         public static MenuWindow currentWindow;
+        public DataTable dt;
         SqlConnection con;
+        Image img;
         public MenuWindow()
         {
             InitializeComponent();
             currentWindow = this;
             radGridView.Visibility = Visibility.Hidden;
             infoFiliere.Visibility = Visibility.Hidden;
+            ButtonEdit.Visibility = Visibility.Hidden;
             string SaadServer = "DESKTOP-SL2AUNJ";
             connString = "Data Source =" + SaadServer + "; Initial Catalog = Gestion_Etudiant; Integrated Security = true;";
             con = new SqlConnection();
@@ -57,8 +61,9 @@ namespace StudentManagerWPF
         }
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {
-            ButtonEdit.Background = new SolidColorBrush(Color.FromRgb(32, 0, 255));
+            //ButtonEdit.Background = new SolidColorBrush(Color.FromRgb(32, 0, 255));
             EditWindow edit = new EditWindow(filiere);
+            clearView();
             edit.Show();
             this.Hide();
             
@@ -82,8 +87,11 @@ namespace StudentManagerWPF
 
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(!radGridView.IsVisible)
+            if (!radGridView.IsVisible)
+            {
                 radGridView.Visibility = Visibility.Visible;
+                ButtonEdit.Visibility = Visibility.Visible;
+            }
             radGridView.ItemsSource = null;
             filiere = Convert.ToInt32(ComboBox1.SelectedIndex) + 1;
             SqlParameter para = new SqlParameter("@filiere", filiere);
@@ -91,7 +99,7 @@ namespace StudentManagerWPF
             SqlCommand commande = new SqlCommand("Select * From Etudiant where id_fil = @filiere", con);
             commande.Parameters.Add(para);
             SqlDataReader reader = commande.ExecuteReader();
-            DataTable dt = new DataTable();
+            dt = new DataTable();
             dt.Columns.Add("cne", typeof(string));
             dt.Columns.Add("image", typeof(ImageSource));
             dt.Columns.Add("nom", typeof(string));
@@ -104,7 +112,7 @@ namespace StudentManagerWPF
             //List < Image > = new List() < Image >;
             while (reader.Read())
             {
-                Image img = new Image();
+                img = new Image();
                 img.Source = new ImageSourceConverter().ConvertFromString(reader.GetString(5)) as ImageSource;
                 dt.Rows.Add(reader.GetString(0), img.Source, reader.GetString(1), reader.GetString(2), reader[3].ToString(), reader.GetDateTime(4).Date.ToString("d"), reader.GetString(6), Convert.ToInt32(reader[7].ToString()), Convert.ToInt32(reader[8].ToString()));
                 radGridView.ItemsSource = dt.DefaultView;
@@ -120,6 +128,51 @@ namespace StudentManagerWPF
             nomFiliere.Text = reader.GetString(1);
             respo.Text = reader.GetString(2);
             reader.Close();
+            
+        }
+        public void clearView()
+        {
+            if (filiere == 1) 
+            {
+                filiere++;
+                ComboBox1.SelectedIndex = filiere - 1;
+                
+            }
+            else
+            {
+                filiere = filiere - 1;
+                ComboBox1.SelectedIndex = filiere - 1;
+            }
+            SqlParameter para = new SqlParameter("@filiere", filiere);
+            SqlCommand commande = new SqlCommand("Select * From Etudiant where id_fil = @filiere", con);
+            commande.Parameters.Add(para);
+            SqlDataReader reader = commande.ExecuteReader();
+            dt = new DataTable();
+            dt.Columns.Add("cne", typeof(string));
+            dt.Columns.Add("image", typeof(ImageSource));
+            dt.Columns.Add("nom", typeof(string));
+            dt.Columns.Add("prenom", typeof(string));
+            dt.Columns.Add("sexe", typeof(string));
+            dt.Columns.Add("date", typeof(string));
+            dt.Columns.Add("email", typeof(string));
+            dt.Columns.Add("idFiliere", typeof(int));
+            dt.Columns.Add("annee", typeof(int));
+            //List < Image > = new List() < Image >;
+            while (reader.Read())
+            {
+                img = new Image();
+                img.Source = new ImageSourceConverter().ConvertFromString(reader.GetString(5)) as ImageSource;
+                dt.Rows.Add(reader.GetString(0), img.Source, reader.GetString(1), reader.GetString(2), reader[3].ToString(), reader.GetDateTime(4).Date.ToString("d"), reader.GetString(6), Convert.ToInt32(reader[7].ToString()), Convert.ToInt32(reader[8].ToString()));
+                radGridView.ItemsSource = dt.DefaultView;
+
+            }
+            reader.Close();
+            for(int i = 0; i < 100; i++)
+            {
+                i = i+1;
+            }
+
+
         }
     }
 }

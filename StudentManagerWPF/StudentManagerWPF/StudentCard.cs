@@ -142,15 +142,30 @@ namespace StudentManagerWPF
         private void pMouseLeave(object sender, System.EventArgs e)
         {
             ImageBrush imgBrush = new ImageBrush();
-            imgBrush.ImageSource = this.img.Source;
-            b.Background = imgBrush;
+            if(img != null)
+            {
+                imgBrush.ImageSource = this.img.Source;
+                b.Background = imgBrush;
+            }
+        
+            
             Mouse.OverrideCursor = Cursors.Arrow;
 
         }
 
         void Onb2Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("rfed!");
+            InsertDataWindow insertdata = new InsertDataWindow(false,cne.Text);
+            insertdata.Show();
+            img.Source = null;
+            img = null;
+            GC.Collect();
+        }
+        public void disposeImage()
+        {
+            
+            
+            
         }
 
 
