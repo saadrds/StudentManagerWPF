@@ -80,7 +80,16 @@ namespace StudentManagerWPF
             {
                 modifier.Visibility = Visibility.Collapsed;
                 title.Text = "Ajouter un Etudiant";
-          
+                comm = new SqlCommand("Select * From Etudiant where cne = '" + cneCard + "'", con);
+                read = comm.ExecuteReader();
+                while (read.Read())
+                {
+                    
+                    photoPath = read.GetString(5);
+                    
+                }
+                read.Close();
+
             }
             else
             {
@@ -113,6 +122,7 @@ namespace StudentManagerWPF
         private void Annuler_Click(object sender, RoutedEventArgs e)
         {
             countWindow--;
+            EditWindow.current.showCards();
             this.Close();
             
         }
@@ -121,15 +131,10 @@ namespace StudentManagerWPF
         {
             if (photoInserted)
             {
-                Boolean condition = photoExtension != "" && cneField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" && filiereComboBox.SelectedIndex != -1 && anneeComboBox.SelectedIndex != -1;
+                Boolean condition = photoExtension != "" && cneField.Text != "" && prenomField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" && filiereComboBox.SelectedIndex != -1 && anneeComboBox.SelectedIndex != -1;
                 if (condition)
                 {
-                    if (isCneTaken(cneField.Text))
-                    {
-                        MessageBox.Show(cneField.Text + " cne is already taken !");
-                    }
-                    else
-                    {
+                    
                         SqlTransaction tr = con.BeginTransaction();
                         SqlCommand commande = con.CreateCommand();
                         commande.Transaction = tr;
@@ -146,13 +151,14 @@ namespace StudentManagerWPF
                             }
                             string values;
                             values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + (filiereComboBox.SelectedIndex + 1) + "','" + (anneeComboBox.SelectedIndex + 1);
-                            //values += 
+                        //values += 
+                            commande.CommandText = "delete From Etudiant where cne = '" + cneCard + "'";
+                            commande.ExecuteNonQuery();
                             string requete = "INSERT INTO Etudiant(cne, nom, prenom, sexe, date_naiss, photo, email, id_fil, annee_cycle) Values( '" + values + "')";
                             commande.CommandText = requete;
                             commande.ExecuteNonQuery();
                             MessageBox.Show("l'etudiant(e) " + nomField.Text + " " + prenomField.Text + " a été bien modifié(e) !");
-                            commande.CommandText = "delete From Etudiant where cne = '" + cneCard + "'";
-                            commande.ExecuteNonQuery();
+                            
                             tr.Commit();
                             try
                             {
@@ -164,9 +170,10 @@ namespace StudentManagerWPF
                             }
                             FileStream f = new FileStream(path + cneField.Text + photoExtension, FileMode.Create);
                             var encoder = new PngBitmapEncoder();
-                            encoder.Frames.Add(BitmapFrame.Create(new BitmapImage(new Uri(photoPath))));
+                            encoder.Frames.Add(BitmapFrame.Create(new BitmapImage(new Uri(op.FileName))));
                             encoder.Save(f);
                             f.Close();
+                        EditWindow.current.showCards();
                             this.Close();
                         }
                         catch (Exception ex)
@@ -174,7 +181,7 @@ namespace StudentManagerWPF
                             tr.Rollback();
                             MessageBox.Show(ex.Message);
                         }
-                    }
+                    
                 }
                 else
                 {
@@ -183,12 +190,45 @@ namespace StudentManagerWPF
             }
             else
             {
-                Boolean condition = cneField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" && filiereComboBox.SelectedIndex != -1 && anneeComboBox.SelectedIndex != -1;
+                Boolean condition = cneField.Text != "" && prenomField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" && filiereComboBox.SelectedIndex != -1 && anneeComboBox.SelectedIndex != -1;
                 if (condition)
                 {
-                    if (isCneTaken(cneField.Text) && cneField.Text != cneCard)
+                    if (cneField.Text == cneCard)
                     {
-                        MessageBox.Show(cneField.Text + " cne is already taken !");
+                        char sexe = ' ';
+                        SqlTransaction tr = con.BeginTransaction();
+                        SqlCommand commande = con.CreateCommand();
+                        commande.Transaction = tr;
+                        try
+                        {
+
+                            if (sexeComboBox.SelectedIndex == 0)
+                            {
+                                sexe = 'M';
+                            }
+                            else if (sexeComboBox.SelectedIndex == 1)
+                            {
+                                sexe = 'F';
+                            }
+                            EditWindow.current.clearCards();
+                            commande.CommandText = "delete From Etudiant where cne = '" + cneCard + "'";
+                            commande.ExecuteNonQuery();
+                            string values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + (filiereComboBox.SelectedIndex + 1) + "','" + (anneeComboBox.SelectedIndex + 1);
+                            //values += 
+                            string requete = "INSERT INTO Etudiant(cne, nom, prenom, sexe, date_naiss, photo, email, id_fil, annee_cycle) Values( '" + values + "')";
+                            commande.CommandText = requete;
+                            commande.ExecuteNonQuery();
+                            
+                            MessageBox.Show("l'etudiant(e) " + nomField.Text + " " + prenomField.Text + " a été bien modifié(e) !");
+                            tr.Commit();
+                            EditWindow.current.showCards();
+                            this.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            tr.Rollback();
+                        }
                     }
                     else
                     {
@@ -206,8 +246,7 @@ namespace StudentManagerWPF
                             {
                                 sexe = 'F';
                             }
-                            commande.CommandText = "delete From Etudiant where cne = '" + cneCard + "'";
-                            commande.ExecuteNonQuery();
+                            
                             string values;
                             values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + (filiereComboBox.SelectedIndex + 1) + "','" + (anneeComboBox.SelectedIndex + 1);
                             //values += 
@@ -217,21 +256,13 @@ namespace StudentManagerWPF
                             MessageBox.Show("l'etudiant(e) " + nomField.Text + " " + prenomField.Text + " a été bien modifié(e) !");
                             try
                             {//hna akhir khaja drti briti tkhdm b intermediaire
-                                MessageBox.Show("in try block file delete");
-                                FileStream f = new FileStream(defaultpath, FileMode.OpenOrCreate);
-                                var encoder = new PngBitmapEncoder();
-                                op.FileName = path + cneField.Text + photoExtension;
-                                encoder.Frames.Add(BitmapFrame.Create(new BitmapImage(new Uri(op.FileName))));
-                                encoder.Save(f);
-                                f.Close();
-                                f = new FileStream(path + cneField.Text + photoExtension, FileMode.OpenOrCreate);
-                                encoder = new PngBitmapEncoder();
-                                op.FileName = path + cneField.Text + photoExtension;
-                                encoder.Frames.Add(BitmapFrame.Create(new BitmapImage(new Uri(defaultpath))));
-                                encoder.Save(f);
-                                f.Close();
+
+                                System.IO.File.Move(photoPath, path + cneField.Text + photoExtension);
+                                commande.CommandText = "delete From Etudiant where cne = '" + cneCard + "'";
+                                commande.ExecuteNonQuery();
+                               
                                 File.Delete(photoPath);
-                                MessageBox.Show("after Deleting");
+                                
 
                             }
                             catch (Exception ex)
@@ -240,6 +271,7 @@ namespace StudentManagerWPF
                             }
                             
                             tr.Commit();
+                            EditWindow.current.showCards();
                             this.Close();
                         }
                         catch (Exception ex)
@@ -254,7 +286,7 @@ namespace StudentManagerWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Boolean condition = photoExtension != "" && cneField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" && filiereComboBox.SelectedIndex != -1 && anneeComboBox.SelectedIndex != -1;
+            Boolean condition = photoExtension != "" && cneField.Text != "" && prenomField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" && filiereComboBox.SelectedIndex != -1 && anneeComboBox.SelectedIndex != -1;
             if (condition)
             {
                 if (isCneTaken(cneField.Text))
@@ -292,6 +324,7 @@ namespace StudentManagerWPF
                         f.Close();
 
                         MessageBox.Show("l'etudiant(e) " + nomField.Text + " " + prenomField.Text + " a été bien ajouté(e) !");
+                        EditWindow.current.showCards();
                         this.Close();
                     }
                     catch (Exception ex)

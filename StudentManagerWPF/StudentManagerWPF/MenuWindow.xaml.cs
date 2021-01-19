@@ -22,7 +22,7 @@ namespace StudentManagerWPF
     /// </summary>
     public partial class MenuWindow : Window
     {
-        int filiere;
+        public int filiere;
         string connString;
         public static MenuWindow currentWindow;
         public DataTable dt;
@@ -52,11 +52,21 @@ namespace StudentManagerWPF
         {
             MainWindow main = new MainWindow();
             main.Show();
+            if (InsertDataWindow.countWindow > 0)
+            {
+                InsertDataWindow.currentInsertWindow.Close();
+                InsertDataWindow.countWindow--;
+            }
             this.Close();
 
         }
         private void Close(object sender, System.Windows.RoutedEventArgs e)
         {
+            if (InsertDataWindow.countWindow > 0)
+            {
+                InsertDataWindow.currentInsertWindow.Close();
+                InsertDataWindow.countWindow--;
+            }
             Close();
         }
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
@@ -130,20 +140,21 @@ namespace StudentManagerWPF
             reader.Close();
             
         }
+        
         public void clearView()
         {
             if (filiere == 1) 
             {
-                filiere++;
-                ComboBox1.SelectedIndex = filiere - 1;
+                //filiere++;
+                ComboBox1.SelectedIndex = filiere;
                 
             }
             else
             {
-                filiere = filiere - 1;
-                ComboBox1.SelectedIndex = filiere - 1;
+                //filiere = filiere - 1;
+                ComboBox1.SelectedIndex = filiere - 2;
             }
-            SqlParameter para = new SqlParameter("@filiere", filiere);
+            /*SqlParameter para = new SqlParameter("@filiere", filiere);
             SqlCommand commande = new SqlCommand("Select * From Etudiant where id_fil = @filiere", con);
             commande.Parameters.Add(para);
             SqlDataReader reader = commande.ExecuteReader();
@@ -170,7 +181,7 @@ namespace StudentManagerWPF
             for(int i = 0; i < 100; i++)
             {
                 i = i+1;
-            }
+            }*/
 
 
         }

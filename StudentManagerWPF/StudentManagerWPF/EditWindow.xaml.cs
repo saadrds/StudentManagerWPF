@@ -35,17 +35,25 @@ namespace StudentManagerWPF
         }
         private void Back(object sender, RoutedEventArgs e)
         {
-            
+            MenuWindow.currentWindow.ComboBox1.SelectedIndex = filiere - 1;
             MenuWindow.currentWindow.Show();
+            if (InsertDataWindow.countWindow > 0)
+            {
+                InsertDataWindow.currentInsertWindow.Close();
+                InsertDataWindow.countWindow--;
+            }
             this.Close();
-            InsertDataWindow.currentInsertWindow.Close();
-            InsertDataWindow.countWindow--;
+            
 
         }
         private void Close(object sender, System.Windows.RoutedEventArgs e)
         {
             MenuWindow.currentWindow.Close();
-            //InsertDataWindow.currentInsertWindow.Close();
+            if (InsertDataWindow.countWindow > 0)
+            {
+                InsertDataWindow.currentInsertWindow.Close();
+                InsertDataWindow.countWindow--;
+            }
             Close();
             
         }
