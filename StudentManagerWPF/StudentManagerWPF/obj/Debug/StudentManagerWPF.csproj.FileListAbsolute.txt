@@ -48,11 +48,8 @@ C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManager
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.CopyComplete
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.exe
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.pdb
-<<<<<<< HEAD
-=======
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.g.cs
 C:\Users\safae\Desktop\c#Apps\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.baml
->>>>>>> main
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\ControlzEx.dll
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MahApps.Metro.dll
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\MaterialDesignColors.dll
@@ -70,11 +67,6 @@ C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\firstWindow.g.cs
-<<<<<<< HEAD
-C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\App.baml
-C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\firstWindow.baml
-C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.CopyComplete
-=======
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.g.cs
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\MenuWindow.baml
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.csproj.CopyComplete
@@ -218,4 +210,5 @@ C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\nl\Telerik.Windows.Controls.resources.dll
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\tr\Telerik.Windows.Controls.resources.dll
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.exe.licenses
->>>>>>> main
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\InsertDataWindow.g.cs
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\InsertDataWindow.baml

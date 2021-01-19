@@ -176,6 +176,9 @@
     <Compile Include="EditWindow.xaml.cs">
       <DependentUpon>EditWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InsertDataWindow.xaml.cs">
+      <DependentUpon>InsertDataWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentCard.cs" />
     <Page Include="EditWindow.xaml">
       <SubType>Designer</SubType>
@@ -183,6 +186,10 @@
     </Page>
 >>>>>>> main
     <Page Include="firstWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InsertDataWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

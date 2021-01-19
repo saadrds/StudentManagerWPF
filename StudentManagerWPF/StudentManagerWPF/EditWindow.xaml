@@ -25,7 +25,7 @@
                         <Button Margin="0,0,5,0" Width="130" Name="Button1ere" Click="Button1ere_Click" Background="#2000ff" >1ére Année</Button>
                         <Button Margin="0,0,5,0" Width="130" Background="#72a7da" Name="Button2eme" Click="Button2eme_Click">2éme Année</Button>
                         <Button Margin="0,0,5,0" Width="130" Background="#72a7da" Name="Button3eme" Click="Button3eme_Click">3éme Anée</Button>
-                        <Button Margin="130,0,5,0" Width="60" Height="35" Name="addStudent" Background="{x:Null}" BorderBrush="#FF154F7E">
+                        <Button Margin="130,0,5,0" Width="60" Height="35" Name="addStudent" Background="{x:Null}" BorderBrush="#FF154F7E" Click="addStudent_Click">
                             <Image Source="/Assets/student.png" Width="30" Height="40"></Image>
                         </Button>
                     </WrapPanel>

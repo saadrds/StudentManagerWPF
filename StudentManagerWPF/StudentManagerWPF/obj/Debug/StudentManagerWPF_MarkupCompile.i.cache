@@ -10,19 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\App.xaml
-<<<<<<< HEAD
-245034670
+51937332324
 
-10463842198
-23-1571710451
-firstWindow.xaml;MainWindow.xaml;
-=======
-42124906560
-
-10-224273431
+11-1382004702
 46-1535890953
-EditWindow.xaml;firstWindow.xaml;MainWindow.xaml;MenuWindow.xaml;
->>>>>>> main
+EditWindow.xaml;firstWindow.xaml;InsertDataWindow.xaml;MainWindow.xaml;MenuWindow.xaml;
 
-False
+True
 

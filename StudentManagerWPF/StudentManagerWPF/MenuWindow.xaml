@@ -235,7 +235,7 @@
                 <ColumnDefinition Width="954*"/>
             </Grid.ColumnDefinitions>
 
-            <dragablz:TabablzControl  Grid.ColumnSpan="2"  >
+            <dragablz:TabablzControl  Grid.ColumnSpan="2" x:Name="tab">
 
 
                 <TabItem Header="GESTION DES ETUDIANTS">
@@ -275,7 +275,7 @@
                             </Rectangle.Effect>
                         </Rectangle>
                         <Grid Width="710" Height ="440" Margin="15 0" HorizontalAlignment="Right">
-                            <WrapPanel>
+                            <WrapPanel Name="wTelerik">
                                 <telerik:RadGridView x:Name="radGridView"  AutoGenerateColumns="False" Margin="23,20,20,0"  SearchPanelForeground="#FF0D1711" HeaderRowStyle="{DynamicResource GridViewHeaderRowStyle1}" >
                                     <telerik:RadGridView.Columns>
                                         <telerik:GridViewDataColumn DataMemberBinding="{Binding cne}" />

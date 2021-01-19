@@ -20,25 +20,40 @@ namespace StudentManagerWPF
     /// </summary>
     public partial class EditWindow : Window
     {
+        List<StudentCard> Cards;
         string connString;
         SqlConnection con;
         int filiere;
         int valueButton = 1;
+        public static EditWindow current;
         public EditWindow(int f)
         {
+            Cards = new List<StudentCard>();
+            current = this;
             InitializeComponent();
             this.filiere = f;
         }
         private void Back(object sender, RoutedEventArgs e)
         {
-            
+            MenuWindow.currentWindow.ComboBox1.SelectedIndex = filiere - 1;
             MenuWindow.currentWindow.Show();
+            if (InsertDataWindow.countWindow > 0)
+            {
+                InsertDataWindow.currentInsertWindow.Close();
+                InsertDataWindow.countWindow--;
+            }
             this.Close();
+            
 
         }
         private void Close(object sender, System.Windows.RoutedEventArgs e)
         {
             MenuWindow.currentWindow.Close();
+            if (InsertDataWindow.countWindow > 0)
+            {
+                InsertDataWindow.currentInsertWindow.Close();
+                InsertDataWindow.countWindow--;
+            }
             Close();
             
         }
@@ -79,7 +94,7 @@ namespace StudentManagerWPF
         {
             showCards();
         }
-        private void showCards()
+        public void showCards()
         {
             cards.Children.Clear();
             String filiereString = filiere.ToString();
@@ -94,9 +109,25 @@ namespace StudentManagerWPF
             SqlDataReader reader = commande.ExecuteReader();
             while (reader.Read())
             {
-                cards.Children.Add(new StudentCard(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
+                Cards.Add(new StudentCard(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
+                cards.Children.Add(this.Cards.Last());
             }
             reader.Close();
+            
+        }
+
+        private void addStudent_Click(object sender, RoutedEventArgs e)
+        {
+            InsertDataWindow ins = new InsertDataWindow(true, "");
+            ins.Show();
+        }
+        public void clearCards()
+        {
+            foreach(StudentCard elem in Cards)
+            {
+                elem.disposeImage();
+                cards.Children.Clear();
+            }
         }
     }
 }
