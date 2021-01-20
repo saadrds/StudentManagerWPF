@@ -305,8 +305,13 @@
 
 
                 <TabItem Header="STATISTIQUE">
+<<<<<<< HEAD
                     <WrapPanel Margin="90,0,0,0" x:Name="rectangleData">
                         <StackPanel Margin="0,80,100,0">
+=======
+                    <WrapPanel Margin="70,0,0,0" x:Name="rectangleData">
+                        <StackPanel Margin="0,85,40,0">
+>>>>>>> SaadWorkingonCharts
                             <TextBlock x:Name="statTitle" Text="Statistique Par Rectangles 3D" Margin="0,0,0,80" FontSize="18" FontFamily="Myanmar Text" FontWeight="Bold" Foreground="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
                             <Button x:Name="parAneeButoon" Margin="20,0,0,50" Background="blue" Click="Button_Click" Width="130">Par Année</Button>
                             <Button x:Name="parFiliereButoon" Margin="20,0,0,50" Background="CadetBlue" Click="parFiliereButoon_Click" Width="130">Par Filiére</Button>
