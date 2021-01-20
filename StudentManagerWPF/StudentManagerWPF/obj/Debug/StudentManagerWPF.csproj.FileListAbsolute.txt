@@ -212,3 +212,12 @@ C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\StudentManagerWPF.exe.licenses
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\InsertDataWindow.g.cs
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\obj\Debug\InsertDataWindow.baml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\SharpDX.Direct2D1.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\SharpDX.Direct3D10.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\SharpDX.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\SharpDX.DXGI.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Telerik.Windows.Controls.Chart.Direct2D.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Telerik.Windows.Controls.Chart.dll
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Telerik.Windows.Controls.Chart.xml
+C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\bin\Debug\Telerik.Windows.Controls.Chart.Direct2D.xml

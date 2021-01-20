@@ -58,6 +58,26 @@
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
+    <Reference Include="SharpDX, Version=2.5.0.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2020.3.1020.45.Trial\SharpDX\SharpDX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=2.5.0.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2020.3.1020.45.Trial\SharpDX\SharpDX.Direct2D1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D10, Version=2.5.0.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2020.3.1020.45.Trial\SharpDX\SharpDX.Direct3D10.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D9, Version=2.5.0.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2020.3.1020.45.Trial\SharpDX\SharpDX.Direct3D9.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=2.5.0.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2020.3.1020.45.Trial\SharpDX\SharpDX.DXGI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -79,6 +99,14 @@
     </Reference>
     <Reference Include="Telerik.Windows.Controls, Version=2020.3.1020.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWPF\2020.3.1020.45.Trial\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart, Version=2020.3.1020.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2020.3.1020.45.Trial\Telerik.Windows.Controls.Chart.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart.Direct2D, Version=2020.3.1020.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2020.3.1020.45.Trial\Telerik.Windows.Controls.Chart.Direct2D.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.DataVisualization, Version=2020.3.1020.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
@@ -176,6 +204,8 @@
     <Compile Include="InsertDataWindow.xaml.cs">
       <DependentUpon>InsertDataWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PlotInfo.cs" />
+    <Compile Include="plotInfoSource.cs" />
     <Compile Include="StudentCard.cs" />
     <Page Include="EditWindow.xaml">
       <SubType>Designer</SubType>

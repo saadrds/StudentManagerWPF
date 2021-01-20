@@ -13,7 +13,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
+using Telerik.Windows.Controls.ChartView;
 
 namespace StudentManagerWPF
 {
@@ -47,6 +49,16 @@ namespace StudentManagerWPF
                 ComboBox1.Items.Add(reader.GetString(1));
             }
             reader.Close();
+
+            
+            fillingChart();
+            fillingChart2();
+            
+
+
+
+
+
         }
         private void Back(object sender, RoutedEventArgs e)
         {
@@ -184,6 +196,52 @@ namespace StudentManagerWPF
             }*/
 
 
+        }
+
+        private void fillingChart()
+        {
+            
+            bar11.DataContext = plotInfoSource.plotInfos(1);
+            rectangleChart1.Palette = Chart3DPalettes.Material;
+            SqlCommand commande = new SqlCommand("Select count(Id_filiere) From Filiere", con);
+            SqlDataReader reader = commande.ExecuteReader();
+            reader.Read();
+            int nbFiliere = reader.GetInt32(0);
+            reader.Close();
+
+            for(int i = 2; i <= nbFiliere; i++)
+            {
+                BarSeries3D geneBar1 = new BarSeries3D();
+                geneBar1.XValueBinding = bar11.XValueBinding;
+                geneBar1.YValueBinding = bar11.YValueBinding;
+                geneBar1.ZValueBinding = bar11.ZValueBinding;
+                geneBar1.ItemsSource = plotInfoSource.plotInfos(i);
+                rectangleChart1.Series.Add(geneBar1);
+            }
+
+        }
+
+        private void fillingChart2()
+        {
+            barF.ItemsSource = plotInfoSource.plotInfosFiliere();
+            rectangleChart2.Palette = Chart3DPalettes.Material;
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            secondData.Visibility = Visibility.Collapsed;
+            firstData.Visibility = Visibility.Visible;
+            parAneeButoon.Background = Brushes.Blue;
+            parFiliereButoon.Background = Brushes.CadetBlue;
+        }
+
+        private void parFiliereButoon_Click(object sender, RoutedEventArgs e)
+        {
+           firstData.Visibility = Visibility.Collapsed;
+            secondData.Visibility = Visibility.Visible;
+            parAneeButoon.Background = Brushes.CadetBlue;
+            parFiliereButoon.Background = Brushes.Blue;
         }
     }
 }
