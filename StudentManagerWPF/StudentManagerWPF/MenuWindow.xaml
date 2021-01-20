@@ -305,7 +305,81 @@
 
 
                 <TabItem Header="STATISTIQUE">
-                    <TextBlock Text="Ask for any question!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <WrapPanel Margin="90,0,0,0" x:Name="rectangleData">
+                        <StackPanel Margin="0,80,100,0">
+                            <TextBlock x:Name="statTitle" Text="Statistique Par Rectangles 3D" Margin="0,0,0,80" FontSize="18" FontFamily="Myanmar Text" FontWeight="Bold" Foreground="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
+                            <Button x:Name="parAneeButoon" Margin="20,0,0,50" Background="blue" Click="Button_Click" Width="130">Par Année</Button>
+                            <Button x:Name="parFiliereButoon" Margin="20,0,0,50" Background="CadetBlue" Click="parFiliereButoon_Click" Width="130">Par Filiére</Button>
+                        </StackPanel>
+                        <WrapPanel Name="firstData">
+                            <telerik:RadCartesianChart3D x:Name="rectangleChart1" Height="430" Width="520">
+                                <telerik:RadCartesianChart3D.Behaviors>
+                                    <telerik:Chart3DCameraBehavior FirstAngle="300" SecondAngle="80" />
+                                </telerik:RadCartesianChart3D.Behaviors>
+                                <telerik:RadCartesianChart3D.XAxis>
+                                    <telerik:CategoricalAxis3D />
+                                </telerik:RadCartesianChart3D.XAxis>
+                                <telerik:RadCartesianChart3D.YAxis>
+                                    <telerik:LinearAxis3D Title="Anées">
+                                        <telerik:LinearAxis3D.TitleTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Background="BurlyWood" Foreground="White" Padding="3" Text="Anée Cycle" Width="70"/>
+                                            </DataTemplate>
+                                        </telerik:LinearAxis3D.TitleTemplate>
+                                    </telerik:LinearAxis3D>
+                                </telerik:RadCartesianChart3D.YAxis>
+                                <telerik:RadCartesianChart3D.ZAxis>
+                                    <telerik:LinearAxis3D Title="etudiants">
+                                        <telerik:LinearAxis3D.TitleTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Background="CadetBlue" Foreground="White" Padding="3" Text=" nombre d'etudiants" Width="120"/>
+                                            </DataTemplate>
+                                        </telerik:LinearAxis3D.TitleTemplate>
+                                    </telerik:LinearAxis3D>
+                                </telerik:RadCartesianChart3D.ZAxis>
+                                <telerik:RadCartesianChart3D.Series>
+                                    <telerik:BarSeries3D Name="bar11" XValueBinding="XValue"  YValueBinding="YValue" ZValueBinding="ZValue" ItemsSource="{Binding}"/>
+
+                                </telerik:RadCartesianChart3D.Series>
+                                <telerik:RadCartesianChart3D.Grid>
+                                    <telerik:CartesianChart3DGrid />
+                                </telerik:RadCartesianChart3D.Grid>
+                            </telerik:RadCartesianChart3D>
+                        </WrapPanel>
+
+                        <WrapPanel Name="secondData">
+                            <telerik:RadCartesianChart3D x:Name="rectangleChart2" Height="430" Width="520">
+                                <telerik:RadCartesianChart3D.Behaviors>
+                                    <telerik:Chart3DCameraBehavior FirstAngle="300" SecondAngle="80" />
+                                </telerik:RadCartesianChart3D.Behaviors>
+                                <telerik:RadCartesianChart3D.XAxis>
+                                    <telerik:CategoricalAxis3D />
+                                </telerik:RadCartesianChart3D.XAxis>
+                                <telerik:RadCartesianChart3D.YAxis>
+                                    <telerik:CategoricalAxis3D />
+                                </telerik:RadCartesianChart3D.YAxis>
+                                <telerik:RadCartesianChart3D.ZAxis>
+                                    <telerik:LinearAxis3D Title="etudiants">
+                                        <telerik:LinearAxis3D.TitleTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Background="CadetBlue" Foreground="White" Padding="3" Text=" nombre d'etudiants" Width="120"/>
+                                            </DataTemplate>
+                                        </telerik:LinearAxis3D.TitleTemplate>
+                                    </telerik:LinearAxis3D>
+                                </telerik:RadCartesianChart3D.ZAxis>
+                                <telerik:RadCartesianChart3D.Series>
+                                    <telerik:BarSeries3D Name="barF" XValueBinding="XValue"  YValueBinding="YValue" ZValueBinding="ZValue" ItemsSource="{Binding}"/>
+
+                                </telerik:RadCartesianChart3D.Series>
+                                <telerik:RadCartesianChart3D.Grid>
+                                    <telerik:CartesianChart3DGrid />
+                                </telerik:RadCartesianChart3D.Grid>
+                            </telerik:RadCartesianChart3D>
+                        </WrapPanel>
+                        
+
+                    </WrapPanel>
+                    
                 </TabItem>
 
             </dragablz:TabablzControl>
