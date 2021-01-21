@@ -46,7 +46,7 @@ namespace StudentManagerWPF
 
             MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
             MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
-            //MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(4);
+            MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
 
             con.Close();
             this.Close();
@@ -69,7 +69,7 @@ namespace StudentManagerWPF
             cmd.ExecuteNonQuery();
             MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
             MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
-            MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(-3);
+            MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(-2);
             con.Close();
             this.Close();
         }
@@ -96,7 +96,7 @@ namespace StudentManagerWPF
                 tr.Commit();
                 MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
                 MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
-               // MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(4);
+               MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
 
             }
 
