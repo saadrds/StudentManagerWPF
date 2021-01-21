@@ -34,6 +34,9 @@ namespace StudentManagerWPF
         {
             InitializeComponent();
             currentWindow = this;
+           
+            
+
             radGridView.Visibility = Visibility.Hidden;
             infoFiliere.Visibility = Visibility.Hidden;
             ButtonEdit.Visibility = Visibility.Hidden;
@@ -121,7 +124,7 @@ namespace StudentManagerWPF
             SqlCommand commande = new SqlCommand("Select * From Etudiant where id_fil = @filiere", con);
             commande.Parameters.Add(para);
             SqlDataReader reader = commande.ExecuteReader();
-            dt = new DataTable();
+            dt  = new DataTable();
             dt.Columns.Add("cne", typeof(string));
             dt.Columns.Add("image", typeof(ImageSource));
             dt.Columns.Add("nom", typeof(string));
@@ -146,11 +149,12 @@ namespace StudentManagerWPF
                 infoFiliere.Visibility = Visibility.Visible;
             commande2.Parameters.Add(para2);
             reader = commande2.ExecuteReader();
-            reader.Read();
-            nomFiliere.Text = reader.GetString(1);
-            respo.Text = reader.GetString(2);
-            reader.Close();
-            
+            if (reader.Read())
+            {
+                nomFiliere.Text = reader.GetString(1);
+                respo.Text = reader.GetString(2);
+                reader.Close();
+            }
         }
         
         public void clearView()
@@ -243,5 +247,101 @@ namespace StudentManagerWPF
             parAneeButoon.Background = Brushes.CadetBlue;
             parFiliereButoon.Background = Brushes.Blue;
         }
+<<<<<<< HEAD
+=======
+
+        private void MyCarousel_Loaded(object sender, RoutedEventArgs e)
+        {
+            if(this.MyCarousel.FindCarouselPanel() != null)
+                this.MyCarousel.FindCarouselPanel().MoveBy(4);
+              
+            
+        }
+        private void Search_Employees(object sender, RoutedEventArgs e)
+        {
+            if (!this.MyCarousel.IsLoaded)
+            {
+                return;
+            }
+
+            var searchQuery = this.TextBoxSearchName.Text;
+
+            if (string.IsNullOrWhiteSpace(searchQuery))
+            {
+                return;
+            }
+
+            var items = (IEnumerable<Filiere>)this.MyCarousel.ItemsSource;
+            Filiere selectedFiliere = null;
+
+            if (items != null)
+            {
+                selectedFiliere = items.FirstOrDefault(x => x.FiliereName.ToLower().Contains(searchQuery.ToLower()));
+
+                this.MyCarousel.BringDataItemIntoView(selectedFiliere);
+                this.MyCarousel.SelectedItem = selectedFiliere;
+            }
+        }
+        private void CloseClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MyCarousel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //int index = MyCarousel.Items.IndexOf(MyCarousel.SelectedItem);
+            //mytext.Text = "Heeeeeey";
+            FiliereEdit win = new FiliereEdit();
+
+            this.Background = new SolidColorBrush(Color.FromRgb(240, 240, 240));
+            // this.Background = Brushes.Black;
+            //this.Opacity = 0.8;
+
+            win.Show();
+            var currentFiliere = this.MyCarousel.CurrentItem as Filiere;
+            win.TextName.Text = currentFiliere.FiliereName;
+            win.TextRespo.Text = currentFiliere.Responsable;
+            win.TextId.Content = currentFiliere.Id;
+            win.ajouter.Visibility = Visibility.Hidden;
+
+
+
+
+
+            //this.AllowsTransparency = true;    
+            // WindowStyle = WindowStyle.None,  
+            // WindowState = WindowState.Maximized;
+
+        }
+        private void left(object sender, RoutedEventArgs e)
+        {
+            this.MyCarousel.FindCarouselPanel().MoveBy(-1);
+        }
+        private void right(object sender, RoutedEventArgs e)
+        {
+            this.MyCarousel.FindCarouselPanel().MoveBy(1);
+        }
+        private void Fleft(object sender, RoutedEventArgs e)
+        {
+            this.MyCarousel.FindCarouselPanel().MoveBy(-2);
+        }
+        private void Fright(object sender, RoutedEventArgs e)
+        {
+            this.MyCarousel.FindCarouselPanel().MoveBy(2);
+        }
+
+
+        private void Ajouter(object sender, RoutedEventArgs e)
+        {
+            FiliereEdit win = new FiliereEdit();
+            win.modifier.Visibility = Visibility.Hidden;
+            win.supprimer.Visibility = Visibility.Hidden;
+            win.ajouter.Visibility = Visibility.Visible;
+            win.FilId.Visibility = Visibility.Hidden;
+            win.Show();
+
+
+        }
+>>>>>>> SaadWorkingonCharts
     }
 }

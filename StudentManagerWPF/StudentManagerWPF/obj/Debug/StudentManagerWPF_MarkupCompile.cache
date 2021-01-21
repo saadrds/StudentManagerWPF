@@ -10,11 +10,17 @@ none
 false
 DEBUG;TRACE
 C:\Users\saadr\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\App.xaml
-51937332324
+6-207045233
 
+<<<<<<< HEAD
 12-1848544101
 531949268426
 EditWindow.xaml;firstWindow.xaml;InsertDataWindow.xaml;MainWindow.xaml;MenuWindow.xaml;
+=======
+16-1411626304
+531949268426
+EditWindow.xaml;FiliereEdit.xaml;firstWindow.xaml;InsertDataWindow.xaml;MainWindow.xaml;MenuWindow.xaml;
+>>>>>>> SaadWorkingonCharts
 
 False
 

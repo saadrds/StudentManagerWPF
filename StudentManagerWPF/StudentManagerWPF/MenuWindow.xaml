@@ -10,6 +10,8 @@
         mc:Ignorable="d"
         Title="MenuWindow" Height="550" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
+        <local:MyViewModel x:Key="MyViewModel" />
+        
         <Style TargetType="{x:Type telerik:GridViewHeaderRow}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -300,14 +302,226 @@
 
 
                 <TabItem Header="GESTION DES FILIERES">
-                    <TextBlock Text="Amazing designs!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Grid>
+                        <Grid Width="650" Height ="430" Margin="15 0" HorizontalAlignment="Center">
+
+
+
+
+                            <Grid DataContext="{StaticResource MyViewModel}">
+
+                                <Grid>
+
+                                    <Grid.Resources>
+                                        <Path x:Key="path"
+				  Data="M30,347 L307.5,347"
+				  Stroke="#FF0998f8"
+				  StrokeThickness="2"
+				  Stretch="Fill"
+                  />
+                                        <Style TargetType="{x:Type telerik:CarouselItem}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type telerik:CarouselItem}">
+                                                        <Grid x:Name="grid"
+								  Height="180"
+								  HorizontalAlignment="Left"
+								  Width="140" Margin="0 50 0 -110">
+                                                            <Border BorderThickness="1"
+										CornerRadius="4">
+                                                                <Border.Background>
+                                                                    <LinearGradientBrush EndPoint="0.5,1"
+															 StartPoint="0.5,0">
+                                                                        <GradientStop Color="#CCFFFFFF" />
+                                                                        <GradientStop Color="#33000000"
+														  Offset="1" />
+                                                                    </LinearGradientBrush>
+                                                                </Border.Background>
+                                                                <Border.BorderBrush>
+                                                                    <LinearGradientBrush EndPoint="0.5,1"
+															 StartPoint="0.5,0">
+                                                                        <GradientStop Color="#99000000"
+														  Offset="1" />
+                                                                        <GradientStop Color="#33000000" />
+                                                                    </LinearGradientBrush>
+                                                                </Border.BorderBrush>
+                                                                <Border BorderThickness="1"
+											CornerRadius="3"
+											Margin="6">
+                                                                    <Border.BorderBrush>
+                                                                        <LinearGradientBrush EndPoint="0.5,1"
+																 StartPoint="0.5,0">
+                                                                            <GradientStop Color="#F7FDFE"
+															  Offset="0.265" />
+                                                                            <GradientStop Color="White"
+															  Offset="0.13" />
+                                                                            <GradientStop Color="#A3CBD0"
+															  Offset="1" />
+                                                                        </LinearGradientBrush>
+                                                                    </Border.BorderBrush>
+                                                                    <Border.Background>
+                                                                        <LinearGradientBrush EndPoint="0.5,1"
+																 StartPoint="0.5,0">
+                                                                            <GradientStop Color="White"
+															  Offset="0.26" />
+                                                                            <GradientStop Color="#A3CBD0" />
+                                                                        </LinearGradientBrush>
+                                                                    </Border.Background>
+                                                                    <Grid>
+                                                                        <Grid.RowDefinitions>
+                                                                            <RowDefinition Height="24" />
+                                                                            <RowDefinition />
+                                                                            <RowDefinition Height="24" />
+                                                                        </Grid.RowDefinitions>
+                                                                        <Border Grid.Row="0"
+													BorderThickness="1"
+													Margin="0"
+													VerticalAlignment="Top"
+													Height="24"
+													CornerRadius="2,2,0,0">
+                                                                            <Border.Background>
+                                                                                <LinearGradientBrush EndPoint="0.5,1"
+																		 StartPoint="0.5,0">
+                                                                                    <GradientStop Color="#A3CBD0"
+																	  Offset="1" />
+                                                                                    <GradientStop Color="#A3CBD0"
+																	  Offset="0.1" />
+                                                                                    <GradientStop Color="#2fb7eb"
+																	  Offset="0.57" />
+                                                                                    <GradientStop Color="#A3CBD0"
+																	  Offset="0.11" />
+                                                                                </LinearGradientBrush>
+                                                                            </Border.Background>
+                                                                            <Border.BorderBrush>
+                                                                                <LinearGradientBrush EndPoint="1,0.5"
+																		 StartPoint="0,0.5">
+                                                                                    <GradientStop Offset="0" />
+                                                                                    <GradientStop Offset="1" />
+                                                                                    <GradientStop Color="White"
+																	  Offset="0.5" />
+                                                                                </LinearGradientBrush>
+                                                                            </Border.BorderBrush>
+                                                                            <StackPanel x:Name="stackPanel"
+															Orientation="Horizontal"
+															VerticalAlignment="Center"
+															HorizontalAlignment="Left"
+															Margin="6,0,0,0">
+                                                                                <TextBlock Text="{Binding Id}"
+															   TextWrapping="Wrap"
+															   Foreground="Black"
+															   FontSize="11"
+															   TextAlignment="Center"
+															   Margin="0,0,3,0" />
+                                                                                <TextBlock x:Name="textBlock"
+															   Text=" - "
+															   TextWrapping="Wrap"
+															   Foreground="White"
+															   FontSize="11"
+															   TextAlignment="Center"
+															   Opacity="0" />
+
+
+
+                                                                            </StackPanel>
+                                                                        </Border>
+                                                                        <StackPanel Grid.Row="1"
+														Orientation="Horizontal"
+                                                            HorizontalAlignment="Center">
+                                                                            <TextBlock
+                                                        Text="{Binding FiliereName}"
+                                                        VerticalAlignment="Center"
+													   HorizontalAlignment="Center"
+                                                        Foreground="Red"
+                                                        FontFamily="bold"
+													   />
+                                                                        </StackPanel>
+
+                                                                        <TextBlock x:Name="textBlock2"
+													   Grid.Row="2"
+                                                           
+													   Text="{Binding Responsable}"
+													   TextWrapping="Wrap"
+													   FontSize="10"
+													   TextAlignment="Center" />
+
+                                                                    </Grid>
+                                                                </Border>
+                                                            </Border>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Grid.Resources>
+
+                                    <telerik:RadCarousel x:Name="MyCarousel"
+							 HorizontalAlignment="Stretch"
+							 VerticalAlignment="Stretch"
+							 ItemsSource="{Binding Filieres}"
+							 Background="Transparent"
+                             AutoGenerateDataPresenters="True" 
+                           HorizontalScrollBarVisibility="Disabled"
+                           VerticalScrollBarVisibility="Disabled"
+                           VerticalContentAlignment="Stretch"
+                           IsSynchronizedWithCurrentItem="True"
+                           Focusable="False"
+                           IsTabStop="False"
+							 VirtualizingStackPanel.IsVirtualizing="False" MouseDoubleClick="MyCarousel_MouseDoubleClick" Loaded="MyCarousel_Loaded" >
+                                        <telerik:RadCarousel.ItemsPanel >
+                                            <ItemsPanelTemplate>
+                                                <telerik:RadCarouselPanel  Path="{StaticResource path}" 
+                                                />
+                                            </ItemsPanelTemplate>
+                                        </telerik:RadCarousel.ItemsPanel>
+                                    </telerik:RadCarousel>
+
+                                </Grid>
+                                <Grid>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
+
+                                        <TextBox x:Name="TextBoxSearchName"  materialDesign:HintAssist.Hint="Cherchez la filière selon son Nom" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="458" Margin="80 50 0 0" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+
+                                        <Image Source="Assets/search.png" MouseLeftButtonDown="Search_Employees"   HorizontalAlignment="Right" VerticalAlignment="Top" Margin=" 37 65"  Width="32" Height="32"/>
+
+
+                                    </StackPanel>
+                                </Grid>
+
+                            </Grid>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50">
+                                <Image Source="Assets/Add.png" MouseLeftButtonDown="Ajouter"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 88"  Width="20" Height="20"/>
+
+                                <Label  Content="Ajoutez une Filiere " Style="{StaticResource MaterialDesignLabel}" Margin=" 0 85" />
+
+
+                            </StackPanel>
+                        </Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="25">
+                            <Image Source="Assets/Fleft.png"  MouseLeftButtonDown="Fleft"  Width="30" Height="30"/>
+                            <Image Source="Assets/left.png"  MouseLeftButtonDown="left" Width="30" Height="30"/>
+                            <Image Source="Assets/right.png"  MouseLeftButtonDown="right"  Width="30" Height="30"/>
+                            <Image Source="Assets/Fright.png"  MouseLeftButtonDown="Fright" Width="30" Height="30"/>
+
+
+
+
+
+
+                        </StackPanel>
+                    </Grid>
                 </TabItem>
 
 
                 <TabItem Header="STATISTIQUE">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <WrapPanel Margin="90,0,0,0" x:Name="rectangleData">
                         <StackPanel Margin="0,80,100,0">
+=======
+                    <WrapPanel Margin="70,0,0,0" x:Name="rectangleData">
+                        <StackPanel Margin="0,85,40,0">
+>>>>>>> SaadWorkingonCharts
 =======
                     <WrapPanel Margin="70,0,0,0" x:Name="rectangleData">
                         <StackPanel Margin="0,85,40,0">
