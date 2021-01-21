@@ -155,7 +155,7 @@ namespace StudentManagerWPF
 
         void Onb2Click(object sender, RoutedEventArgs e)
         {
-            InsertDataWindow insertdata = new InsertDataWindow(false,cne.Text);
+            InsertDataWindow insertdata = new InsertDataWindow(false, cne.Text,EditWindow.current.filiere) ;
             insertdata.Show();
             img.Source = null;
             img = null;
