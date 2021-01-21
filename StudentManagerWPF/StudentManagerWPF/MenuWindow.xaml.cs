@@ -25,6 +25,7 @@ namespace StudentManagerWPF
     public partial class MenuWindow : Window
     {
         public int filiere;
+        public String FiliereName ="";
         string connString;
         public static MenuWindow currentWindow;
         public DataTable dt;
@@ -118,7 +119,15 @@ namespace StudentManagerWPF
                 ButtonEdit.Visibility = Visibility.Visible;
             }
             radGridView.ItemsSource = null;
+            FiliereName = ComboBox1.SelectedItem.ToString();
             filiere = Convert.ToInt32(ComboBox1.SelectedIndex) + 1;
+            SqlCommand commande1 = new SqlCommand("Select Id_filiere from Filiere where Nom_filiere = '" + FiliereName + "'",con);
+            SqlDataReader reader2 = commande1.ExecuteReader();
+            if(reader2.Read())
+            {
+                filiere = reader2.GetInt32(0);
+            }
+            reader2.Close();
             SqlParameter para = new SqlParameter("@filiere", filiere);
             SqlParameter para2 = new SqlParameter("@filiere", filiere);
             SqlCommand commande = new SqlCommand("Select * From Etudiant where id_fil = @filiere", con);
@@ -207,21 +216,21 @@ namespace StudentManagerWPF
             
             bar11.DataContext = plotInfoSource.plotInfos(1);
             rectangleChart1.Palette = Chart3DPalettes.Material;
-            SqlCommand commande = new SqlCommand("Select count(Id_filiere) From Filiere", con);
+            SqlCommand commande = new SqlCommand("Select Id_filiere From Filiere", con);
             SqlDataReader reader = commande.ExecuteReader();
-            reader.Read();
-            int nbFiliere = reader.GetInt32(0);
-            reader.Close();
 
-            for(int i = 2; i <= nbFiliere; i++)
-            {
+            int nbFiliere = 1;
+
+            while (reader.Read()) { 
+                nbFiliere = reader.GetInt32(0);
                 BarSeries3D geneBar1 = new BarSeries3D();
                 geneBar1.XValueBinding = bar11.XValueBinding;
                 geneBar1.YValueBinding = bar11.YValueBinding;
                 geneBar1.ZValueBinding = bar11.ZValueBinding;
-                geneBar1.ItemsSource = plotInfoSource.plotInfos(i);
+                geneBar1.ItemsSource = plotInfoSource.plotInfos(nbFiliere);
                 rectangleChart1.Series.Add(geneBar1);
             }
+        reader.Close();
 
         }
 

@@ -36,8 +36,8 @@
                 </ComboBox>
                 <DatePicker Name="dateField" Margin="0,0,0,10" materialDesign:HintAssist.Hint="Date de Naissance" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"></DatePicker>
                 <TextBox x:Name="emailField" Margin="0,0,0,10" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
-                <ComboBox x:Name="filiereComboBox" Margin="0,15,0,10" materialDesign:HintAssist.Hint="Filiere" Style="{StaticResource MaterialDesignComboBox}"></ComboBox>
-                <ComboBox x:Name="anneeComboBox" Margin="0,0,0,15" materialDesign:HintAssist.Hint="Année" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                
+                <ComboBox x:Name="anneeComboBox" Margin="0,0,0,45" materialDesign:HintAssist.Hint="Année" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                     <ComboBoxItem>1ère Anéee</ComboBoxItem>
                     <ComboBoxItem>2ème Année </ComboBoxItem>
                     <ComboBoxItem>3ème Anéee</ComboBoxItem>

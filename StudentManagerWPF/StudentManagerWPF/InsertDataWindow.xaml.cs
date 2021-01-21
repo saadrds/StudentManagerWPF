@@ -36,10 +36,12 @@ namespace StudentManagerWPF
         public string cneCard;
         public string defaultpath = "../../Assets/pic.png";
         public static InsertDataWindow currentInsertWindow;
+        public int selectedFiliere;
 
-        public InsertDataWindow(Boolean ajoute, string cneCard)
+        public InsertDataWindow(Boolean ajoute, string cneCard,int selecedFiliere)
         {
             InitializeComponent();
+            this.selectedFiliere = selecedFiliere;
             this.cneCard = cneCard;
             op = new OpenFileDialog();
             
@@ -60,13 +62,7 @@ namespace StudentManagerWPF
             this.ajoute = ajoute;
             currentInsertWindow = this;
             existingCNE = new List<string>();
-            SqlCommand commande = new SqlCommand("Select * From Filiere", con);
-            SqlDataReader reader = commande.ExecuteReader();
-            while (reader.Read())
-            {
-                filiereComboBox.Items.Add(reader.GetString(1));
-            }
-            reader.Close();
+            
             SqlCommand comm = new SqlCommand("Select cne From Etudiant", con);
             SqlDataReader read = comm.ExecuteReader();
             while (read.Read())
@@ -111,7 +107,7 @@ namespace StudentManagerWPF
                     photoPath = read.GetString(5);
                     photoExtension = photoPath.Substring(photoPath.LastIndexOf('.'), photoPath.Length - photoPath.LastIndexOf('.'));
                     emailField.Text = read.GetString(6);
-                    filiereComboBox.SelectedIndex = read.GetInt32(7) - 1;
+                   
                     anneeComboBox.SelectedIndex = read.GetInt32(8) - 1;
                 }
                 read.Close();
@@ -131,7 +127,7 @@ namespace StudentManagerWPF
         {
             if (photoInserted)
             {
-                Boolean condition = photoExtension != "" && cneField.Text != "" && prenomField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" && filiereComboBox.SelectedIndex != -1 && anneeComboBox.SelectedIndex != -1;
+                Boolean condition = photoExtension != "" && cneField.Text != "" && prenomField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" &&  anneeComboBox.SelectedIndex != -1;
                 if (condition)
                 {
                     
@@ -150,7 +146,7 @@ namespace StudentManagerWPF
                                 sexe = 'F';
                             }
                             string values;
-                            values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + (filiereComboBox.SelectedIndex + 1) + "','" + (anneeComboBox.SelectedIndex + 1);
+                            values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + selectedFiliere + "','" + (anneeComboBox.SelectedIndex + 1);
                         //values += 
                             commande.CommandText = "delete From Etudiant where cne = '" + cneCard + "'";
                             commande.ExecuteNonQuery();
@@ -190,7 +186,7 @@ namespace StudentManagerWPF
             }
             else
             {
-                Boolean condition = cneField.Text != "" && prenomField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" && filiereComboBox.SelectedIndex != -1 && anneeComboBox.SelectedIndex != -1;
+                Boolean condition = cneField.Text != "" && prenomField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != ""  && anneeComboBox.SelectedIndex != -1;
                 if (condition)
                 {
                     if (cneField.Text == cneCard)
@@ -213,7 +209,7 @@ namespace StudentManagerWPF
                             EditWindow.current.clearCards();
                             commande.CommandText = "delete From Etudiant where cne = '" + cneCard + "'";
                             commande.ExecuteNonQuery();
-                            string values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + (filiereComboBox.SelectedIndex + 1) + "','" + (anneeComboBox.SelectedIndex + 1);
+                            string values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" +selectedFiliere + "','" + (anneeComboBox.SelectedIndex + 1);
                             //values += 
                             string requete = "INSERT INTO Etudiant(cne, nom, prenom, sexe, date_naiss, photo, email, id_fil, annee_cycle) Values( '" + values + "')";
                             commande.CommandText = requete;
@@ -248,7 +244,7 @@ namespace StudentManagerWPF
                             }
                             
                             string values;
-                            values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + (filiereComboBox.SelectedIndex + 1) + "','" + (anneeComboBox.SelectedIndex + 1);
+                            values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + selectedFiliere + "','" + (anneeComboBox.SelectedIndex + 1);
                             //values += 
                             string requete = "INSERT INTO Etudiant(cne, nom, prenom, sexe, date_naiss, photo, email, id_fil, annee_cycle) Values( '" + values + "')";
                             commande.CommandText = requete;
@@ -286,7 +282,7 @@ namespace StudentManagerWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Boolean condition = photoExtension != "" && cneField.Text != "" && prenomField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != "" && filiereComboBox.SelectedIndex != -1 && anneeComboBox.SelectedIndex != -1;
+            Boolean condition = photoExtension != "" && cneField.Text != "" && prenomField.Text != "" && nomField.Text != "" && sexeComboBox.SelectedIndex != -1 && dateField.SelectedDate.HasValue && emailField.Text != ""  && anneeComboBox.SelectedIndex != -1;
             if (condition)
             {
                 if (isCneTaken(cneField.Text))
@@ -310,7 +306,7 @@ namespace StudentManagerWPF
                             sexe = 'F';
                         }
                         string values;
-                        values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + (filiereComboBox.SelectedIndex + 1) + "','" + (anneeComboBox.SelectedIndex + 1);
+                        values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + selectedFiliere + "','" + (anneeComboBox.SelectedIndex + 1);
                         //values += 
                         string requete = "INSERT INTO Etudiant(cne, nom, prenom, sexe, date_naiss, photo, email, id_fil, annee_cycle) Values( '" + values + "')";
                         commande.CommandText = requete;
