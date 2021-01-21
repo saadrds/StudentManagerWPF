@@ -247,8 +247,6 @@ namespace StudentManagerWPF
             parAneeButoon.Background = Brushes.CadetBlue;
             parFiliereButoon.Background = Brushes.Blue;
         }
-<<<<<<< HEAD
-=======
 
         private void MyCarousel_Loaded(object sender, RoutedEventArgs e)
         {
@@ -342,6 +340,5 @@ namespace StudentManagerWPF
 
 
         }
->>>>>>> SaadWorkingonCharts
     }
 }

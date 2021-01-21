@@ -34,13 +34,8 @@ namespace StudentManagerWPF
         {
             if (username.Text == "admin" && mdp.Password == "123456" )
             {
-<<<<<<< HEAD
-                firstWindow fw = new firstWindow();
-                fw.Show();
-=======
                 MenuWindow menu = new MenuWindow();
                 menu.Show();
->>>>>>> main
                 this.Close();
             }
             else

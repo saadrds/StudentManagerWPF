@@ -7,45 +7,7 @@
         mc:Ignorable="d"
         Title="firstWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="20" />
-        </Grid.RowDefinitions>
-        <ComboBox x:Name="ComboBox1" Grid.Row="1" Grid.Column="1"  Width="auto"  IsEditable="True" IsReadOnly="True" Text="-- Choisir une filiere --" Margin="0,0,0,20" SelectionChanged="ComboBox1_SelectionChanged">
-            <ComboBoxItem>Genie informatique</ComboBoxItem>
-            <ComboBoxItem>Genie industriel</ComboBoxItem>
-            <ComboBoxItem>Genie Réseaux et Telecom</ComboBoxItem>
-            <ComboBoxItem>Genie Procédé Ciramique</ComboBoxItem>
-        </ComboBox>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="520,275,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
-        <Border  Grid.Row="2" Grid.Column="1" Height="80" Width="auto" CornerRadius="4" BorderThickness="2" BorderBrush="Gray" Background="#cde4e7">
-        <StackPanel>
-            <WrapPanel Background="#2196f3" Width="190">
-                    <TextBlock TextAlignment="Center" Margin="0,0,0,0">Informations sur la filiere</TextBlock>
-                </WrapPanel>
-                <WrapPanel>
-                    <Label>Nom :</Label>
-                    <TextBlock Text="nom_Filiere" Padding="6,4,0,0"/>
-                </WrapPanel>
-            <WrapPanel>
-                <Label>Responsable :</Label>
-                <TextBlock Text="nom_Respo" Padding="3,4,0,0"/>
-            </WrapPanel>
-        </StackPanel>
-        </Border>
-        <WrapPanel Grid.Row="4" Grid.Column="4" x:Name="cards">
-        </WrapPanel>
     </Grid>
 </Window>
