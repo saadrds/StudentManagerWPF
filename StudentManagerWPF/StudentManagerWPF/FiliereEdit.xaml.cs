@@ -33,8 +33,8 @@ namespace StudentManagerWPF
         {
             string connString;
             SqlConnection con;
-            string SafaeServer = "DESKTOP-SL2AUNJ";
-            connString = "Data Source =" + SafaeServer + "; Initial Catalog = Gestion_Etudiant ; Integrated Security = true;";
+            string SafaeServer = "DESKTOP-0UDUAFT" + "\\" + "SQLEXPRESS";
+            connString = "Data Source =" + SafaeServer + "; Initial Catalog = gestion des etudiants ; Integrated Security = true;";
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
@@ -56,8 +56,8 @@ namespace StudentManagerWPF
         {
             string connString;
             SqlConnection con;
-            string SafaeServer = "DESKTOP-SL2AUNJ";
-            connString = "Data Source =" + SafaeServer + "; Initial Catalog = Gestion_Etudiant ; Integrated Security = true;";
+            string SafaeServer = "DESKTOP-0UDUAFT" + "\\" + "SQLEXPRESS";
+            connString = "Data Source =" + SafaeServer + "; Initial Catalog = gestion des etudiants ; Integrated Security = true;";
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
@@ -77,8 +77,8 @@ namespace StudentManagerWPF
         {
             string connString;
             SqlConnection con;
-            string SafaeServer = "DESKTOP-SL2AUNJ";
-            connString = "Data Source =" + SafaeServer + "; Initial Catalog = Gestion_Etudiant ; Integrated Security = true;";
+            string SafaeServer = "DESKTOP-0UDUAFT" + "\\" + "SQLEXPRESS";
+            connString = "Data Source =" + SafaeServer + "; Initial Catalog = gestion des etudiants ; Integrated Security = true;";
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();

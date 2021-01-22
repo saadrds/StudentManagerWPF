@@ -40,7 +40,7 @@ namespace StudentManagerWPF
             radGridView.Visibility = Visibility.Hidden;
             infoFiliere.Visibility = Visibility.Hidden;
             ButtonEdit.Visibility = Visibility.Hidden;
-            string SaadServer = "DESKTOP-SL2AUNJ";
+          /*  string SaadServer = "DESKTOP-SL2AUNJ";
             connString = "Data Source =" + SaadServer + "; Initial Catalog = Gestion_Etudiant; Integrated Security = true;";
             con = new SqlConnection();
             con.ConnectionString = connString;
@@ -59,7 +59,7 @@ namespace StudentManagerWPF
             
 
 
-
+            */
 
 
         }
@@ -280,10 +280,7 @@ namespace StudentManagerWPF
                 this.MyCarousel.SelectedItem = selectedFiliere;
             }
         }
-        private void CloseClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        
 
         private void MyCarousel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
@@ -291,7 +288,7 @@ namespace StudentManagerWPF
             //mytext.Text = "Heeeeeey";
             FiliereEdit win = new FiliereEdit();
 
-            this.Background = new SolidColorBrush(Color.FromRgb(240, 240, 240));
+            //this.Background = new SolidColorBrush(Color.FromRgb(240, 240, 240));
             // this.Background = Brushes.Black;
             //this.Opacity = 0.8;
 
@@ -340,5 +337,17 @@ namespace StudentManagerWPF
 
 
         }
+
+        private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            FiliereEdit win = new FiliereEdit();
+            win.modifier.Visibility = Visibility.Hidden;
+            win.supprimer.Visibility = Visibility.Hidden;
+            win.ajouter.Visibility = Visibility.Visible;
+            win.FilId.Visibility = Visibility.Hidden;
+            win.Show();
+        }
+
+       
     }
 }
