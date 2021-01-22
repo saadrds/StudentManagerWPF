@@ -23,7 +23,7 @@ namespace StudentManagerWPF
         List<StudentCard> Cards;
         string connString;
         SqlConnection con;
-        int filiere;
+        public int filiere;
         int valueButton = 1;
         public static EditWindow current;
         public EditWindow(int f)
@@ -118,7 +118,7 @@ namespace StudentManagerWPF
 
         private void addStudent_Click(object sender, RoutedEventArgs e)
         {
-            InsertDataWindow ins = new InsertDataWindow(true, "");
+            InsertDataWindow ins = new InsertDataWindow(true, "",filiere);
             ins.Show();
         }
         public void clearCards()
