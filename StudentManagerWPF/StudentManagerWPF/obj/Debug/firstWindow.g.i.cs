@@ -72,7 +72,7 @@ namespace StudentManagerWPF {
             {
             case 1:
             
-            #line 10 "..\..\firstWindow.xaml"
+            #line 12 "..\..\firstWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
             
             #line default

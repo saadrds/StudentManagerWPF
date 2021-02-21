@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentManagerWPF"
         mc:Ignorable="d"
+        Icon="Assets/images.png"
+
         Title="EditWindow" Height="550" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
     <Grid>
         <Grid Height="20" Background="WhiteSmoke" VerticalAlignment="Top">

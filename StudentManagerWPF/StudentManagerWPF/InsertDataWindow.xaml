@@ -13,7 +13,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
-        <WrapPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" Height="80" Background="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}">
+        <WrapPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" Height="80" Background="#2fb7eb">
             <TextBlock Foreground="White" FontSize="22" FontFamily="Segoe UI Semibold" TextDecorations="{x:Null}" VerticalAlignment="Top" Margin="95,25,0,0" HorizontalAlignment="Left" Background="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}" Name="title"></TextBlock>
         </WrapPanel>
         <Grid Grid.Row="1">

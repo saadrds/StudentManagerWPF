@@ -85,7 +85,7 @@ namespace StudentManagerWPF {
         #line hidden
         
         
-        #line 39 "..\..\FiliereEdit.xaml"
+        #line 32 "..\..\FiliereEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button supprimer;
         
@@ -93,7 +93,7 @@ namespace StudentManagerWPF {
         #line hidden
         
         
-        #line 49 "..\..\FiliereEdit.xaml"
+        #line 35 "..\..\FiliereEdit.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button ajouter;
         
@@ -162,7 +162,7 @@ namespace StudentManagerWPF {
             case 7:
             this.supprimer = ((System.Windows.Controls.Button)(target));
             
-            #line 39 "..\..\FiliereEdit.xaml"
+            #line 32 "..\..\FiliereEdit.xaml"
             this.supprimer.Click += new System.Windows.RoutedEventHandler(this.Supprimer);
             
             #line default
@@ -171,7 +171,7 @@ namespace StudentManagerWPF {
             case 8:
             this.ajouter = ((System.Windows.Controls.Button)(target));
             
-            #line 49 "..\..\FiliereEdit.xaml"
+            #line 35 "..\..\FiliereEdit.xaml"
             this.ajouter.Click += new System.Windows.RoutedEventHandler(this.Ajouter);
             
             #line default
