@@ -237,7 +237,7 @@
                 <ColumnDefinition Width="954*"/>
             </Grid.ColumnDefinitions>
 
-            <dragablz:TabablzControl  Grid.ColumnSpan="2" x:Name="tab">
+            <dragablz:TabablzControl  Grid.ColumnSpan="2" x:Name="tab" SelectionChanged="tab_SelectionChanged">
 
 
                 <TabItem Header="GESTION DES ETUDIANTS">

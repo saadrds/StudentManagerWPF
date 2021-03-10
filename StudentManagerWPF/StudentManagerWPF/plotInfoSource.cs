@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,7 @@ namespace StudentManagerWPF
         public static ObservableCollection<PlotInfo> plotInfos(int nb)
         {
             ObservableCollection<PlotInfo> data = new ObservableCollection<PlotInfo>();
-            string SaadServer = "DESKTOP-SL2AUNJ";
-            string connString = "Data Source =" + SaadServer + "; Initial Catalog = Gestion_Etudiant; Integrated Security = true;";
+            string connString = ConfigurationManager.AppSettings["MyConnection"];
             SqlConnection con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
@@ -34,8 +34,7 @@ namespace StudentManagerWPF
         public static ObservableCollection<PlotInfo> plotInfosFiliere()
         {
             ObservableCollection<PlotInfo> data = new ObservableCollection<PlotInfo>();
-            string SaadServer = "DESKTOP-SL2AUNJ";
-            string connString = "Data Source =" + SaadServer + "; Initial Catalog = Gestion_Etudiant; Integrated Security = true;";
+            string connString = ConfigurationManager.AppSettings["MyConnection"];
             SqlConnection con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();

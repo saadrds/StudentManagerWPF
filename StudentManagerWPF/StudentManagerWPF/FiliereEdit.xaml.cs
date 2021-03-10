@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -21,9 +22,11 @@ namespace StudentManagerWPF
     /// </summary>
     public partial class FiliereEdit : Window
     {
+        public String oldValue;
         public FiliereEdit()
         {
             InitializeComponent();
+            
         }
         private void Close(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -31,22 +34,39 @@ namespace StudentManagerWPF
         }
         private void Modifier(object sender, RoutedEventArgs e)
         {
+            
             string connString;
             SqlConnection con;
-            string SafaeServer = "DESKTOP-0UDUAFT" + "\\" + "SQLEXPRESS";
-            connString = "Data Source =" + SafaeServer + "; Initial Catalog = gestion des etudiants ; Integrated Security = true;";
+            connString = ConfigurationManager.AppSettings["MyConnection"];
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
+            
             cmd.CommandText = "Update Filiere set Nom_filiere = '" + TextName.Text + "' , Responsable ='" + TextRespo.Text + "'where Id_filiere ='" + TextId.Content + "'";
+            
 
             cmd.ExecuteNonQuery();
-
+            foreach(var item in MenuWindow.currentWindow.ComboBox1.Items)
+            {
+                if (item.ToString() == oldValue)
+                {
+                    int i = MenuWindow.currentWindow.ComboBox1.Items.IndexOf(item.ToString());
+                    
+                    //MenuWindow.currentWindow.ComboBox1.SelectedIndex = i;
+                    MenuWindow.currentWindow.ComboBox1.Items.RemoveAt(i);
+                    MenuWindow.currentWindow.ComboBox1.Items.Insert(i,TextName.Text);
+                    break;
+                }
+                
+            }
             MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
             MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
             MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
+           
+            
+            
 
             con.Close();
             this.Close();
@@ -56,8 +76,7 @@ namespace StudentManagerWPF
         {
             string connString;
             SqlConnection con;
-            string SafaeServer = "DESKTOP-0UDUAFT" + "\\" + "SQLEXPRESS";
-            connString = "Data Source =" + SafaeServer + "; Initial Catalog = gestion des etudiants ; Integrated Security = true;";
+            connString = ConfigurationManager.AppSettings["MyConnection"];
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
@@ -70,6 +89,21 @@ namespace StudentManagerWPF
             MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
             MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
             MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(-2);
+            foreach (var item in MenuWindow.currentWindow.ComboBox1.Items)
+            {
+                if (item.ToString() == oldValue)
+                {
+                    int i = MenuWindow.currentWindow.ComboBox1.Items.IndexOf(item.ToString());
+
+                    //MenuWindow.currentWindow.ComboBox1.SelectedIndex = i;
+                    MenuWindow.currentWindow.ComboBox1.Items.RemoveAt(i);
+                    break;
+                }
+
+            }
+
+
+
             con.Close();
             this.Close();
         }
@@ -77,8 +111,8 @@ namespace StudentManagerWPF
         {
             string connString;
             SqlConnection con;
-            string SafaeServer = "DESKTOP-0UDUAFT" + "\\" + "SQLEXPRESS";
-            connString = "Data Source =" + SafaeServer + "; Initial Catalog = gestion des etudiants ; Integrated Security = true;";
+         
+            connString = ConfigurationManager.AppSettings["MyConnection"];
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
@@ -96,7 +130,8 @@ namespace StudentManagerWPF
                 tr.Commit();
                 MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
                 MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
-               MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
+                MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
+                MenuWindow.currentWindow.ComboBox1.Items.Add(TextName.Text);
 
             }
 

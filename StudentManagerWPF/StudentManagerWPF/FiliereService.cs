@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,7 @@ namespace StudentManagerWPF
 
             string connString;
             SqlConnection con;
-            string SafaeServer = "DESKTOP-0UDUAFT"+"\\" + "SQLEXPRESS";
-            connString = "Data Source =" + SafaeServer + "; Initial Catalog = gestion des etudiants; Integrated Security = true;";
+            connString = ConfigurationManager.AppSettings["MyConnection"];
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
