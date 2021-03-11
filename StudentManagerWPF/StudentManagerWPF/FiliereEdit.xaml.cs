@@ -34,42 +34,67 @@ namespace StudentManagerWPF
         }
         private void Modifier(object sender, RoutedEventArgs e)
         {
-            
+
+
             string connString;
             SqlConnection con;
             connString = ConfigurationManager.AppSettings["MyConnection"];
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            
-            cmd.CommandText = "Update Filiere set Nom_filiere = '" + TextName.Text + "' , Responsable ='" + TextRespo.Text + "'where Id_filiere ='" + TextId.Content + "'";
-            
 
-            cmd.ExecuteNonQuery();
-            foreach(var item in MenuWindow.currentWindow.ComboBox1.Items)
+            bool value = false;
+            SqlCommand commande = new SqlCommand("Select * From Filiere", con);
+            SqlDataReader reader = commande.ExecuteReader();
+            while (reader.Read())
             {
-                if (item.ToString() == oldValue)
+                if (TextName.Text == reader.GetString(1))
                 {
-                    int i = MenuWindow.currentWindow.ComboBox1.Items.IndexOf(item.ToString());
-                    
-                    //MenuWindow.currentWindow.ComboBox1.SelectedIndex = i;
-                    MenuWindow.currentWindow.ComboBox1.Items.RemoveAt(i);
-                    MenuWindow.currentWindow.ComboBox1.Items.Insert(i,TextName.Text);
-                    break;
+                    value = true;
                 }
-                
+                else
+                    value = false;
             }
-            MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
-            MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
-            MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
-           
-            
-            
+            reader.Close();
 
-            con.Close();
-            this.Close();
+
+
+            if (!value && TextName.Text != " " && TextName.Text != "")
+            {
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+
+                cmd.CommandText = "Update Filiere set Nom_filiere = '" + TextName.Text + "' , Responsable ='" + TextRespo.Text + "'where Id_filiere ='" + TextId.Content + "'";
+
+
+                cmd.ExecuteNonQuery();
+                foreach (var item in MenuWindow.currentWindow.ComboBox1.Items)
+                {
+                    if (item.ToString() == oldValue)
+                    {
+                        int i = MenuWindow.currentWindow.ComboBox1.Items.IndexOf(item.ToString());
+
+                        //MenuWindow.currentWindow.ComboBox1.SelectedIndex = i;
+                        MenuWindow.currentWindow.ComboBox1.Items.RemoveAt(i);
+                        MenuWindow.currentWindow.ComboBox1.Items.Insert(i, TextName.Text);
+                        break;
+                    }
+
+                }
+                MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
+                MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
+                MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
+
+
+
+
+                con.Close();
+                this.Close();
+            }
+            else
+            {
+                msg.Content = "Svp Entrez un nom valide";
+            }
         }
 
         private void Supprimer(object sender, RoutedEventArgs e)
@@ -80,6 +105,9 @@ namespace StudentManagerWPF
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
+
+
+
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "delete from Filiere where Id_filiere ='" + TextId.Content + "'";
@@ -109,49 +137,74 @@ namespace StudentManagerWPF
         }
         private void Ajouter(object sender, RoutedEventArgs e)
         {
+
+
             string connString;
             SqlConnection con;
-         
+
             connString = ConfigurationManager.AppSettings["MyConnection"];
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
-            SqlTransaction tr = con.BeginTransaction();
-
-            SqlCommand cmd = con.CreateCommand();
-            cmd.Transaction = tr;
-
-            cmd.CommandType = CommandType.Text;
-            try
+            bool value = false;
+            SqlCommand commande = new SqlCommand("Select * From Filiere", con);
+            SqlDataReader reader = commande.ExecuteReader();
+            while (reader.Read())
             {
-                cmd.CommandText = " INSERT INTO Filiere(Nom_filiere,Responsable) VALUES('" + TextName.Text + "','" + TextRespo.Text + "')";
+                if (TextName.Text == reader.GetString(1))
+                {
+                    value = true;
+                }
+                else
+                    value = false;
+            }
+            reader.Close();
 
-                cmd.ExecuteNonQuery();
-                tr.Commit();
-                MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
-                MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
-                MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
-                MenuWindow.currentWindow.ComboBox1.Items.Add(TextName.Text);
+
+            if (!value && TextName.Text != " ")
+            {
+
+                SqlTransaction tr = con.BeginTransaction();
+
+                SqlCommand cmd = con.CreateCommand();
+                cmd.Transaction = tr;
+
+                cmd.CommandType = CommandType.Text;
+                try
+                {
+                    cmd.CommandText = " INSERT INTO Filiere(Nom_filiere,Responsable) VALUES('" + TextName.Text + "','" + TextRespo.Text + "')";
+
+                    cmd.ExecuteNonQuery();
+                    tr.Commit();
+                    MenuWindow.currentWindow.MyCarousel.ItemsSource = null;
+                    MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
+                    MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
+                    MenuWindow.currentWindow.ComboBox1.Items.Add(TextName.Text);
+
+                }
+
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    tr.Rollback();
+
+                }
+                finally
+                {
+                    con.Close();
+                    this.Close();
+
+
+                }
+
+
 
             }
-
-
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-                tr.Rollback();
-
+                msg.Content = "Cette filiére est déjà prise";
             }
-            finally
-            {
-                con.Close();
-                this.Close();
-
-
-            }
-
-
-
         }
 
     }
