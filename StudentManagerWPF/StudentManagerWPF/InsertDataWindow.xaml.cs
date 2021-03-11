@@ -321,6 +321,8 @@ namespace StudentManagerWPF
 
                         MessageBox.Show("l'etudiant(e) " + nomField.Text + " " + prenomField.Text + " a été bien ajouté(e) !");
                         EditWindow.current.showCards();
+                        MenuWindow.currentWindow.fillingChart();
+                        MenuWindow.currentWindow.fillingChart2();
                         this.Close();
                     }
                     catch (Exception ex)

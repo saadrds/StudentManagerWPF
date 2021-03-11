@@ -575,7 +575,7 @@
                                     <telerik:CategoricalAxis3D />
                                 </telerik:RadCartesianChart3D.XAxis>
                                 <telerik:RadCartesianChart3D.YAxis>
-                                    <telerik:LinearAxis3D Title="Anées">
+                                    <telerik:LinearAxis3D Title="Années">
                                         <telerik:LinearAxis3D.TitleTemplate>
                                             <DataTemplate>
                                                 <TextBlock Background="BurlyWood" Foreground="White" Padding="3" Text="Anée Cycle" Width="70"/>

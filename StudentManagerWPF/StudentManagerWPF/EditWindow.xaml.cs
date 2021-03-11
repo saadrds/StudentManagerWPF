@@ -24,11 +24,22 @@ namespace StudentManagerWPF
         List<StudentCard> Cards;
         string connString;
         SqlConnection con;
+        bool value = false;
         public int filiere;
         int valueButton = 1;
         public static EditWindow current;
         public EditWindow(int f)
         {
+            if(MenuWindow.currentWindow.ComboBox1.SelectedIndex == 0)
+            {
+                value = true;
+                MenuWindow.currentWindow.ComboBox1.SelectedIndex += 1;
+            }
+            else
+            {
+                MenuWindow.currentWindow.ComboBox1.SelectedIndex -= 1;
+            }
+            
             Cards = new List<StudentCard>();
             current = this;
             InitializeComponent();
@@ -36,7 +47,14 @@ namespace StudentManagerWPF
         }
         private void Back(object sender, RoutedEventArgs e)
         {
-            MenuWindow.currentWindow.ComboBox1.SelectedIndex = filiere - 1;
+            if (value)
+            {
+                MenuWindow.currentWindow.ComboBox1.SelectedIndex -= 1;
+            }
+            else
+            {
+                MenuWindow.currentWindow.ComboBox1.SelectedIndex += 1;
+            }
             MenuWindow.currentWindow.Show();
             if (InsertDataWindow.countWindow > 0)
             {

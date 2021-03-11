@@ -132,6 +132,8 @@ namespace StudentManagerWPF
                 MenuWindow.currentWindow.MyCarousel.ItemsSource = FiliereService.GetEmployees();
                 MenuWindow.currentWindow.MyCarousel.FindCarouselPanel().MoveBy(2);
                 MenuWindow.currentWindow.ComboBox1.Items.Add(TextName.Text);
+                
+
 
             }
 

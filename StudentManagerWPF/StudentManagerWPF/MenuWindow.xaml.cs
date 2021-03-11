@@ -26,6 +26,7 @@ namespace StudentManagerWPF
     public partial class MenuWindow : Window
     {
         public int filiere;
+        public int filiere2;
         public String FiliereName;
         string connString;
         public static MenuWindow currentWindow;
@@ -90,7 +91,7 @@ namespace StudentManagerWPF
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {
             //ButtonEdit.Background = new SolidColorBrush(Color.FromRgb(32, 0, 255));
-            EditWindow edit = new EditWindow(filiere);
+            EditWindow edit = new EditWindow(filiere2);
             //clearView();
             edit.Show();
             this.Hide();
@@ -125,7 +126,7 @@ namespace StudentManagerWPF
                 ComboBox1.SelectedIndex = 0;
             FiliereName = ComboBox1.SelectedItem.ToString();
             filiere = Convert.ToInt32(ComboBox1.SelectedIndex) + 1;
-            int filiere2 = filiere;
+            filiere2 = filiere;
             SqlCommand commande1 = new SqlCommand("Select Id_filiere from Filiere where Nom_filiere = '" + FiliereName + "'",con);
             SqlDataReader reader2 = commande1.ExecuteReader();
             if(reader2.Read())
@@ -217,16 +218,16 @@ namespace StudentManagerWPF
 
         }
 
-        private void fillingChart()
+        public void fillingChart()
         {
-            
+            bar11.DataContext = null;
             bar11.DataContext = plotInfoSource.plotInfos(1);
             rectangleChart1.Palette = Chart3DPalettes.Material;
             SqlCommand commande = new SqlCommand("Select Id_filiere From Filiere", con);
             SqlDataReader reader = commande.ExecuteReader();
 
             int nbFiliere = 1;
-
+            rectangleChart1.Series.Clear();
             while (reader.Read()) { 
                 nbFiliere = reader.GetInt32(0);
                 BarSeries3D geneBar1 = new BarSeries3D();
@@ -240,8 +241,9 @@ namespace StudentManagerWPF
 
         }
 
-        private void fillingChart2()
+        public void fillingChart2()
         {
+            barF.ItemsSource = null;
             barF.ItemsSource = plotInfoSource.plotInfosFiliere();
             rectangleChart2.Palette = Chart3DPalettes.Material;
             
