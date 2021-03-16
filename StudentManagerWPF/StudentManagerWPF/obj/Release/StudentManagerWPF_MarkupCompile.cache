@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\safae\Source\Repos\StudentManagerWPFVF\StudentManagerWPF\StudentManagerWPF\obj\Release\
+=======
+C:\Users\safae\Source\Repos\StudentManagerWPF2\StudentManagerWPF\StudentManagerWPF\obj\Release\
+>>>>>>> FinalBranchwork
 StudentManagerWPF
 none
 false
 TRACE
+<<<<<<< HEAD
 C:\Users\safae\Source\Repos\StudentManagerWPFVF\StudentManagerWPF\StudentManagerWPF\App.xaml
 6-207045233
 
 16-1411626304
 53-596732203
+=======
+C:\Users\safae\Source\Repos\StudentManagerWPF2\StudentManagerWPF\StudentManagerWPF\App.xaml
+6-207045233
+
+16-1411626304
+53343346787
+>>>>>>> FinalBranchwork
 EditWindow.xaml;FiliereEdit.xaml;firstWindow.xaml;InsertDataWindow.xaml;MainWindow.xaml;MenuWindow.xaml;
 
 True

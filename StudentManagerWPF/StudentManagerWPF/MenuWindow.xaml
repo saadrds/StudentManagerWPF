@@ -10,6 +10,8 @@
 
         xmlns:local="clr-namespace:StudentManagerWPF"
         mc:Ignorable="d"
+            Icon="Assets/icone.png"
+
         Title="MenuWindow" Height="550" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
         <local:MyViewModel x:Key="MyViewModel" />
@@ -239,7 +241,7 @@
                 <ColumnDefinition Width="954*"/>
             </Grid.ColumnDefinitions>
 
-            <dragablz:TabablzControl  Grid.ColumnSpan="2" x:Name="tab">
+            <dragablz:TabablzControl  Grid.ColumnSpan="2" x:Name="tab" SelectionChanged="tab_SelectionChanged">
 
 
                 <TabItem Header="GESTION DES ETUDIANTS">
@@ -271,6 +273,7 @@
                                         </WrapPanel>
                                     </StackPanel>
                                 </Border>
+                                <Button Margin="20" VerticalAlignment="Bottom" Width="130" Name="ButtonEdit" Click="ButtonEdit_Click" Foreground="Black" Background="#2fb7eb" >Modifier</Button>
                             </StackPanel>
                         </Grid>
                         <Rectangle  Width="710" Height ="440" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Right" >
@@ -295,7 +298,7 @@
 
                                 </telerik:RadGridView>
                             </WrapPanel>
-                            <Button Margin="20" VerticalAlignment="Bottom" Width="130" Name="ButtonEdit" Click="ButtonEdit_Click" Foreground="Black" Background="#2fb7eb" >Modifier</Button>
+                            
 
                         </Grid>
                     </Grid>
@@ -305,7 +308,16 @@
 
                 <TabItem Header="GESTION DES FILIERES">
                     <Grid>
+                    <Rectangle  Width="960" Height ="440" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Center" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect Color="#FFC1D3E4" Direction="0" BlurRadius="10" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    
+                        
                         <Grid Width="650" Height ="430" Margin="15 0" HorizontalAlignment="Center">
+                            <Label Content="Double click sur l'item pour le modifier "  HorizontalAlignment="Center"/>
+
 
 
 
@@ -321,14 +333,42 @@
 				  StrokeThickness="2"
 				  Stretch="Fill"
                   />
+                                        
+                                            
+                                       
                                         <Style TargetType="{x:Type telerik:CarouselItem}">
                                             <Setter Property="Template">
                                                 <Setter.Value>
                                                     <ControlTemplate TargetType="{x:Type telerik:CarouselItem}">
-                                                        <Grid x:Name="grid"
-								  Height="180"
-								  HorizontalAlignment="Left"
-								  Width="140" Margin="0 50 0 -110">
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver"
+
+                             Value="True">
+                                                                <Setter Property="Effect">
+                                                                    <Setter.Value>
+                                                                        <DropShadowEffect Color="Blue"
+
+                                                  ShadowDepth="2"
+
+                                                  Direction="315"
+
+                                                  Opacity="0.5" />
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                                <Setter Property="Cursor" Value="Hand" />
+
+
+
+                                                            </Trigger>
+                                                 
+                                                                
+
+                                                            
+
+
+                                                        </ControlTemplate.Triggers>
+                                                        <Grid x:Name="grid" Height="180"  HorizontalAlignment="Left"   Width="140" Margin="0 110 0 0">
+                                                            
                                                             <Border BorderThickness="1"
 										CornerRadius="4">
                                                                 <Border.Background>
@@ -453,6 +493,11 @@
                                                     </ControlTemplate>
                                                 </Setter.Value>
                                             </Setter>
+                                            
+                                            
+                                            
+                                                
+                                            
                                         </Style>
                                     </Grid.Resources>
 
@@ -471,14 +516,17 @@
 							 VirtualizingStackPanel.IsVirtualizing="False" MouseDoubleClick="MyCarousel_MouseDoubleClick" Loaded="MyCarousel_Loaded" >
                                         <telerik:RadCarousel.ItemsPanel >
                                             <ItemsPanelTemplate>
-                                                <telerik:RadCarouselPanel  Path="{StaticResource path}" 
-                                                />
+                                                <telerik:RadCarouselPanel  Path="{StaticResource path}" />
+
+
                                             </ItemsPanelTemplate>
                                         </telerik:RadCarousel.ItemsPanel>
                                     </telerik:RadCarousel>
 
                                 </Grid>
+
                                 <Grid>
+
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
 
                                         <TextBox x:Name="TextBoxSearchName"  materialDesign:HintAssist.Hint="Cherchez la filière selon son Nom" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="458" Margin="80 50 0 0" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
@@ -494,11 +542,12 @@
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50">
                                 <Image Source="Assets/Add.png" MouseLeftButtonDown="Ajouter"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 88"  Width="20" Height="20"/>
 
-                                <Label  Content="Ajoutez une Filiere " Style="{StaticResource MaterialDesignLabel}" Margin=" 0 85" />
+                                <Label  Content="Ajoutez une Filiere " Style="{StaticResource MaterialDesignLabel}" Margin=" 0 85" FontWeight="Bold" FontStyle="Italic" MouseLeftButtonDown="Label_MouseLeftButtonDown" />
 
 
                             </StackPanel>
                         </Grid>
+
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="25">
                             <Image Source="Assets/Fleft.png"  MouseLeftButtonDown="Fleft"  Width="30" Height="30"/>
                             <Image Source="Assets/left.png"  MouseLeftButtonDown="left" Width="30" Height="30"/>
@@ -531,7 +580,7 @@
                                     <telerik:CategoricalAxis3D />
                                 </telerik:RadCartesianChart3D.XAxis>
                                 <telerik:RadCartesianChart3D.YAxis>
-                                    <telerik:LinearAxis3D Title="Anées">
+                                    <telerik:LinearAxis3D Title="Années">
                                         <telerik:LinearAxis3D.TitleTemplate>
                                             <DataTemplate>
                                                 <TextBlock Background="BurlyWood" Foreground="White" Padding="3" Text="Anée Cycle" Width="70"/>

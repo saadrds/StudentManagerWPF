@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentManagerWPF"
                 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Icon="Assets/icone.png"
 
         mc:Ignorable="d"
         Title="FiliereEdit"  Height="300" Width="600 " ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
@@ -22,8 +23,11 @@
             </StackPanel>
             <StackPanel Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 80" >
 
+                
                 <TextBox   x:Name="TextName" materialDesign:HintAssist.Hint="Entez le Nom de la filière" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="458"  HorizontalAlignment="Center" Margin="0 0 0 15" />
+                <Label Name="msg" Foreground="red"/>
                 <TextBox   x:Name="TextRespo" materialDesign:HintAssist.Hint="Entrez le nom du Responsable" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="458"  HorizontalAlignment="Center"  />
+               
             </StackPanel>
             <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Height="80" VerticalAlignment="Bottom" Margin="158,0,162,-1" >
 

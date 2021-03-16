@@ -5,10 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentManagerWPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="StudentManagerWPF.MainWindow"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="StudentManagerWPF.MainWindow" 
         mc:Ignorable="d"
+<<<<<<< HEAD
         Icon="Assets/images.png"
         Title="LoginWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown">
+=======
+    Icon="Assets/icone.png"
+       
+    Title="LoginWindow" Height="450"  Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown" >
+   
+>>>>>>> FinalBranchwork
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>

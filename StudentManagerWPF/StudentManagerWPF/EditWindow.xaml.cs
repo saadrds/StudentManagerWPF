@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,22 @@ namespace StudentManagerWPF
         List<StudentCard> Cards;
         string connString;
         SqlConnection con;
+        bool value = false;
         public int filiere;
         int valueButton = 1;
         public static EditWindow current;
         public EditWindow(int f)
         {
+            if(MenuWindow.currentWindow.ComboBox1.SelectedIndex == 0)
+            {
+                value = true;
+                MenuWindow.currentWindow.ComboBox1.SelectedIndex += 1;
+            }
+            else
+            {
+                MenuWindow.currentWindow.ComboBox1.SelectedIndex -= 1;
+            }
+            
             Cards = new List<StudentCard>();
             current = this;
             InitializeComponent();
@@ -35,7 +47,14 @@ namespace StudentManagerWPF
         }
         private void Back(object sender, RoutedEventArgs e)
         {
-            MenuWindow.currentWindow.ComboBox1.SelectedIndex = filiere - 1;
+            if (value)
+            {
+                MenuWindow.currentWindow.ComboBox1.SelectedIndex -= 1;
+            }
+            else
+            {
+                MenuWindow.currentWindow.ComboBox1.SelectedIndex += 1;
+            }
             MenuWindow.currentWindow.Show();
             if (InsertDataWindow.countWindow > 0)
             {
@@ -99,8 +118,7 @@ namespace StudentManagerWPF
             cards.Children.Clear();
             String filiereString = filiere.ToString();
             String valueButtonString = filiere.ToString();
-            string SaadServer = "DESKTOP-SL2AUNJ";
-            connString = "Data Source =" + SaadServer + "; Initial Catalog = Gestion_Etudiant; Integrated Security = true;";
+            connString = ConfigurationManager.AppSettings["MyConnection"];
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();

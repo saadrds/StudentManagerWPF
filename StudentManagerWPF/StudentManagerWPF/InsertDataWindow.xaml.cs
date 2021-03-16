@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -27,14 +28,14 @@ namespace StudentManagerWPF
         List<string> existingCNE;
         string connString;
         SqlConnection con;
-        string path = "../../Assets/";
+        string path = "Assets/";
         Boolean ajoute;
         Boolean photoInserted = false;
         string photoExtension  ="";
         string photoPath = "";
         public static int countWindow = 0;
         public string cneCard;
-        public string defaultpath = "../../Assets/pic.png";
+        //public string defaultpath = "../../Assets/pic.png";
         public static InsertDataWindow currentInsertWindow;
         public int selectedFiliere;
 
@@ -53,8 +54,7 @@ namespace StudentManagerWPF
             countWindow++; // fentres active actuelement
 
             //connexion au server
-            string SaadServer = "DESKTOP-SL2AUNJ";
-            connString = "Data Source =" + SaadServer + "; Initial Catalog = Gestion_Etudiant; Integrated Security = true;";
+            connString = ConfigurationManager.AppSettings["MyConnection"];
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
@@ -321,6 +321,8 @@ namespace StudentManagerWPF
 
                         MessageBox.Show("l'etudiant(e) " + nomField.Text + " " + prenomField.Text + " a été bien ajouté(e) !");
                         EditWindow.current.showCards();
+                        MenuWindow.currentWindow.fillingChart();
+                        MenuWindow.currentWindow.fillingChart2();
                         this.Close();
                     }
                     catch (Exception ex)

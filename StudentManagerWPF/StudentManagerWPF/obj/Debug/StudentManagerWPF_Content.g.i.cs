@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/baseline_person_add_alt_1_black_18dp.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icone.ico")]
 
 

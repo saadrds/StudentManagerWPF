@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -25,7 +26,8 @@ namespace StudentManagerWPF
     public partial class MenuWindow : Window
     {
         public int filiere;
-        public String FiliereName ="";
+        public int filiere2;
+        public String FiliereName;
         string connString;
         public static MenuWindow currentWindow;
         public DataTable dt;
@@ -35,14 +37,15 @@ namespace StudentManagerWPF
         {
             InitializeComponent();
             currentWindow = this;
-           
-            
 
-            radGridView.Visibility = Visibility.Hidden;
+
+            FiliereName = " ";
+
+
+        radGridView.Visibility = Visibility.Hidden;
             infoFiliere.Visibility = Visibility.Hidden;
             ButtonEdit.Visibility = Visibility.Hidden;
-            string SaadServer = "DESKTOP-SL2AUNJ";
-            connString = "Data Source =" + SaadServer + "; Initial Catalog = Gestion_Etudiant; Integrated Security = true;";
+            connString = ConfigurationManager.AppSettings["MyConnection"];
             con = new SqlConnection();
             con.ConnectionString = connString;
             con.Open();
@@ -60,7 +63,7 @@ namespace StudentManagerWPF
             
 
 
-
+            
 
 
         }
@@ -88,8 +91,8 @@ namespace StudentManagerWPF
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {
             //ButtonEdit.Background = new SolidColorBrush(Color.FromRgb(32, 0, 255));
-            EditWindow edit = new EditWindow(filiere);
-            clearView();
+            EditWindow edit = new EditWindow(filiere2);
+            //clearView();
             edit.Show();
             this.Hide();
             
@@ -119,17 +122,20 @@ namespace StudentManagerWPF
                 ButtonEdit.Visibility = Visibility.Visible;
             }
             radGridView.ItemsSource = null;
+            if (ComboBox1.SelectedItem == null)
+                ComboBox1.SelectedIndex = 0;
             FiliereName = ComboBox1.SelectedItem.ToString();
             filiere = Convert.ToInt32(ComboBox1.SelectedIndex) + 1;
+            filiere2 = filiere;
             SqlCommand commande1 = new SqlCommand("Select Id_filiere from Filiere where Nom_filiere = '" + FiliereName + "'",con);
             SqlDataReader reader2 = commande1.ExecuteReader();
             if(reader2.Read())
             {
-                filiere = reader2.GetInt32(0);
+                filiere2 = reader2.GetInt32(0);
             }
             reader2.Close();
-            SqlParameter para = new SqlParameter("@filiere", filiere);
-            SqlParameter para2 = new SqlParameter("@filiere", filiere);
+            SqlParameter para = new SqlParameter("@filiere", filiere2);
+            SqlParameter para2 = new SqlParameter("@filiere", filiere2);
             SqlCommand commande = new SqlCommand("Select * From Etudiant where id_fil = @filiere", con);
             commande.Parameters.Add(para);
             SqlDataReader reader = commande.ExecuteReader();
@@ -148,7 +154,8 @@ namespace StudentManagerWPF
             {
                 img = new Image();
                 img.Source = new ImageSourceConverter().ConvertFromString(reader.GetString(5)) as ImageSource;
-                dt.Rows.Add(reader.GetString(0), img.Source, reader.GetString(1), reader.GetString(2), reader[3].ToString(), reader.GetDateTime(4).Date.ToString("d"), reader.GetString(6), Convert.ToInt32(reader[7].ToString()), Convert.ToInt32(reader[8].ToString()));
+                dt.Rows.Add(reader.GetString(0), img.Source, reader.GetString(1), reader.GetString(2), reader[3].ToString(),
+                    reader.GetDateTime(4).Date.ToString("d"), reader.GetString(6), Convert.ToInt32(reader[7].ToString()), Convert.ToInt32(reader[8].ToString()));
                 radGridView.ItemsSource = dt.DefaultView;
 
             }
@@ -170,14 +177,14 @@ namespace StudentManagerWPF
         {
             if (filiere == 1) 
             {
-                //filiere++;
+                filiere--;
                 ComboBox1.SelectedIndex = filiere;
                 
             }
             else
             {
                 //filiere = filiere - 1;
-                ComboBox1.SelectedIndex = filiere - 2;
+                ComboBox1.SelectedIndex = filiere - 1;
             }
             /*SqlParameter para = new SqlParameter("@filiere", filiere);
             SqlCommand commande = new SqlCommand("Select * From Etudiant where id_fil = @filiere", con);
@@ -211,16 +218,16 @@ namespace StudentManagerWPF
 
         }
 
-        private void fillingChart()
+        public void fillingChart()
         {
-            
+            bar11.DataContext = null;
             bar11.DataContext = plotInfoSource.plotInfos(1);
             rectangleChart1.Palette = Chart3DPalettes.Material;
             SqlCommand commande = new SqlCommand("Select Id_filiere From Filiere", con);
             SqlDataReader reader = commande.ExecuteReader();
 
             int nbFiliere = 1;
-
+            rectangleChart1.Series.Clear();
             while (reader.Read()) { 
                 nbFiliere = reader.GetInt32(0);
                 BarSeries3D geneBar1 = new BarSeries3D();
@@ -234,8 +241,9 @@ namespace StudentManagerWPF
 
         }
 
-        private void fillingChart2()
+        public void fillingChart2()
         {
+            barF.ItemsSource = null;
             barF.ItemsSource = plotInfoSource.plotInfosFiliere();
             rectangleChart2.Palette = Chart3DPalettes.Material;
             
@@ -289,10 +297,7 @@ namespace StudentManagerWPF
                 this.MyCarousel.SelectedItem = selectedFiliere;
             }
         }
-        private void CloseClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        
 
         private void MyCarousel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
@@ -300,13 +305,14 @@ namespace StudentManagerWPF
             //mytext.Text = "Heeeeeey";
             FiliereEdit win = new FiliereEdit();
 
-            this.Background = new SolidColorBrush(Color.FromRgb(240, 240, 240));
+            //this.Background = new SolidColorBrush(Color.FromRgb(240, 240, 240));
             // this.Background = Brushes.Black;
             //this.Opacity = 0.8;
 
             win.Show();
             var currentFiliere = this.MyCarousel.CurrentItem as Filiere;
             win.TextName.Text = currentFiliere.FiliereName;
+            win.oldValue = currentFiliere.FiliereName;
             win.TextRespo.Text = currentFiliere.Responsable;
             win.TextId.Content = currentFiliere.Id;
             win.ajouter.Visibility = Visibility.Hidden;
@@ -347,6 +353,21 @@ namespace StudentManagerWPF
             win.FilId.Visibility = Visibility.Hidden;
             win.Show();
 
+
+        }
+
+        private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            FiliereEdit win = new FiliereEdit();
+            win.modifier.Visibility = Visibility.Hidden;
+            win.supprimer.Visibility = Visibility.Hidden;
+            win.ajouter.Visibility = Visibility.Visible;
+            win.FilId.Visibility = Visibility.Hidden;
+            win.Show();
+        }
+
+        private void tab_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }

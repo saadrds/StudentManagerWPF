@@ -10,11 +10,19 @@ none
 false
 DEBUG;TRACE
 C:\Users\saadr\OneDrive\Desktop\.Net Programming\WPF\StudentManagerWPF\StudentManagerWPF\StudentManagerWPF\App.xaml
+<<<<<<< HEAD
 6-207045233
 
 172040981625
 53-2023202447
 EditWindow.xaml;FiliereEdit.xaml;firstWindow.xaml;InsertDataWindow.xaml;MainWindow.xaml;MenuWindow.xaml;
+=======
+5899468222
+
+16-479961055
+53-2023202447
+EditWindow.xaml;FiliereEdit.xaml;InsertDataWindow.xaml;MainWindow.xaml;MenuWindow.xaml;
+>>>>>>> FinalBranchwork
 
 True
 
