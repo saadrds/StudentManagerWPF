@@ -28,14 +28,14 @@ namespace StudentManagerWPF
         List<string> existingCNE;
         string connString;
         SqlConnection con;
-        string path = "../../Assets/";
+        string path = "Assets/";
         Boolean ajoute;
         Boolean photoInserted = false;
         string photoExtension  ="";
         string photoPath = "";
         public static int countWindow = 0;
         public string cneCard;
-        public string defaultpath = "../../Assets/pic.png";
+        //public string defaultpath = "../../Assets/pic.png";
         public static InsertDataWindow currentInsertWindow;
         public int selectedFiliere;
 
