@@ -6,6 +6,8 @@
         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
           xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                Icon="Assets/images.png"
+
         xmlns:local="clr-namespace:StudentManagerWPF"
         mc:Ignorable="d"
         Title="MenuWindow" Height="550" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">

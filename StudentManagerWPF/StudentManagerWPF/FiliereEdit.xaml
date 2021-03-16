@@ -27,12 +27,33 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Height="80" VerticalAlignment="Bottom" Margin="158,0,162,-1" >
 
-                <Button  Content="Modifier" Name="modifier" Background="#FF65C765" Height="30" Width="80" FontWeight="Bold"  Foreground="White"  Margin=" 0 0 20 2" Padding="5" Click="Modifier" BorderBrush="#FF65C765"/>
+                <Button  Content="Modifier" Name="modifier" Height="30" Width="80" FontWeight="Bold"  Foreground="White"  Margin=" 0 0 20 2" Padding="5" Click="Modifier" BorderBrush="#FF65C765">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF3DB954" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
 
-                <Button  Content="Supprimer" Name="supprimer" Background="#FFE66262" Height="30" Width="80" FontWeight="Bold"  Foreground="White" Margin="10 0 0 2" Padding="5"  BorderBrush="#FFE66262" Click="Supprimer"/>
+                <Button  Content="Supprimer" BorderBrush="Red" Name="supprimer"  Height="30" Width="80" FontWeight="Bold"  Foreground="White" Margin="10 0 0 2" Padding="5"  Click="Supprimer">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FFDE2121" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
 
             </StackPanel>
-            <Button  Content="Ajouter" Name="ajouter" Background="#FF4A78DA" Height="30" Width="80" FontWeight="Bold"  Foreground="White" Margin="258,211,262,59" Padding="5"    RenderTransformOrigin="0.547,1.513" Click="Ajouter"/>
+            <Button  Content="Ajouter" Name="ajouter" Height="30" Width="80" FontWeight="Bold"  Foreground="White" Margin="258,211,262,59" Padding="5"    RenderTransformOrigin="0.547,1.513" Click="Ajouter">
+                <Button.Background >
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF1A3878" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
 
         </Grid>
         <Grid Height="20" Background="#2fb7eb" VerticalAlignment="Bottom" />

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\obj\Release\
+C:\Users\safae\Source\Repos\StudentManagerWPFVF\StudentManagerWPF\StudentManagerWPF\obj\Release\
 StudentManagerWPF
 none
 false
 TRACE
-C:\Users\safae\Desktop\StudentM\StudentManagerWPF\StudentManagerWPF\App.xaml
-42124906560
+C:\Users\safae\Source\Repos\StudentManagerWPFVF\StudentManagerWPF\StudentManagerWPF\App.xaml
+6-207045233
 
-11-1718313295
-24623334878
-EditWindow.xaml;firstWindow.xaml;MainWindow.xaml;MenuWindow.xaml;
+16-1411626304
+53-596732203
+EditWindow.xaml;FiliereEdit.xaml;firstWindow.xaml;InsertDataWindow.xaml;MainWindow.xaml;MenuWindow.xaml;
 
 True
 
