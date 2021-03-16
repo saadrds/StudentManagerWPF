@@ -364,5 +364,38 @@ namespace StudentManagerWPF
             }
             return false;
         }
+
+        private void Supprimer_Click(object sender, RoutedEventArgs e)
+        {
+            SqlTransaction tr = con.BeginTransaction();
+            SqlCommand commande = con.CreateCommand();
+            commande.Transaction = tr;
+            try
+            {
+                char sexe = ' ';
+                if (sexeComboBox.SelectedIndex == 0)
+                {
+                    sexe = 'M';
+                }
+                else if (sexeComboBox.SelectedIndex == 1)
+                {
+                    sexe = 'F';
+                }
+                string values;
+                values = cneField.Text + "','" + nomField.Text + "','" + prenomField.Text + "','" + sexe + "','" + dateField.SelectedDate + "','" + path + cneField.Text + photoExtension + "','" + emailField.Text + "','" + selectedFiliere + "','" + (anneeComboBox.SelectedIndex + 1);
+                //values += 
+                commande.CommandText = "delete From Etudiant where cne = '" + cneField.Text + "'";
+                commande.ExecuteNonQuery();
+                MessageBox.Show("etudiant bien supprimé!");
+                tr.Commit();
+                con.Close();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("error deleting pic");
+                tr.Rollback();
+            }
+        }
     }
 }

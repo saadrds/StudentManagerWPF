@@ -132,7 +132,7 @@ namespace StudentManagerWPF
         private void pMouseEnter(object sender, System.EventArgs e)
         {
             ImageBrush editIcon = new ImageBrush();
-            editIcon.ImageSource = new ImageSourceConverter().ConvertFromString("../../Assets/edit_icon.png") as ImageSource;
+            editIcon.ImageSource = new ImageSourceConverter().ConvertFromString("Assets/edit_icon.png") as ImageSource;
             editIcon.Opacity = 0.5;
             b.Background = editIcon;
             Mouse.OverrideCursor = Cursors.Hand;
