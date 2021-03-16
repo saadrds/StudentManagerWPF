@@ -271,6 +271,7 @@
                                         </WrapPanel>
                                     </StackPanel>
                                 </Border>
+                                <Button Margin="20" VerticalAlignment="Bottom" Width="130" Name="ButtonEdit" Click="ButtonEdit_Click" Foreground="Black" Background="#2fb7eb" >Modifier</Button>
                             </StackPanel>
                         </Grid>
                         <Rectangle  Width="710" Height ="440" Margin="15 0" RadiusY="12" RadiusX="12" Fill="White" HorizontalAlignment="Right" >
@@ -295,7 +296,7 @@
 
                                 </telerik:RadGridView>
                             </WrapPanel>
-                            <Button Margin="20" VerticalAlignment="Bottom" Width="130" Name="ButtonEdit" Click="ButtonEdit_Click" Foreground="Black" Background="#2fb7eb" >Modifier</Button>
+                            
 
                         </Grid>
                     </Grid>
